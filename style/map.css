@@ -1,0 +1,116 @@
+
+/*map-pin-box*/
+.white-bg{
+    background: #ffffff;
+}
+#mapContainer{
+
+    height: 100%;
+}
+.map-pin-box{
+    position: relative;
+    height: 100%;
+}
+.map-pin-box a.pic-map{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 30px;
+    line-height: 37px;
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+    font-size: 20px;
+    background: url(../images/mapPick.png) no-repeat 12px 6px;
+}
+.map-pin-box input{
+    _text-indent: 10px;
+}
+
+
+.map-piker-show{
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 1px 0  #999;
+    z-index: 1;
+}
+.result-box{
+    position: absolute;
+    background: white;
+    z-index: 1000;
+    width: 96%;
+    box-shadow: 0 0 3px 0 #999;
+    font-size: 13px;
+    line-height: 20px;
+    top:50px;
+    left:2%;
+    /*max-height: 410px;*/
+    overflow-y: auto;
+}
+.amap-copyright{
+    display: none !important;
+}
+.map-annotation{
+    background: #ffffff;
+    font-size: 14px;
+    height: 30px;
+    padding: 0 5px;
+    line-height: 30px;
+}
+.map-annotation .annot1{
+    float: left;
+}
+.map-annotation .annot2{
+    float: right;
+    cursor: pointer;
+}
+.amap-logo{
+    /*display: none;*/
+}
+.amap-info-outer, .amap-menu-outer{
+    box-shadow: 0 3px 14px rgba(0,0,0,.6);
+}
+.amap-info-content h3{
+    font-size: 14px;
+}
+.amap-info .amap-info-close{
+    display: none;
+}
+
+.map-search{
+    position: absolute;
+    top:5px;
+    z-index: 1000;
+    width: 96%;
+    background-color: #fff;
+    left: 2%;
+    box-shadow: 0 0px 10px rgba(0,0,0,.25);
+    border-radius: 2px 3px 3px 2px;
+}
+.map-s-input{
+    padding: 12px 26px 12px 36px;
+    height: 45px;
+    /*line-height: 45px;*/
+}
+.map-search-icon{
+    position: absolute;
+    left:10px;
+    line-height: 45px;
+    color: #999;
+}
+.map-delete-icon{
+    display: none;
+    position: absolute;
+    right:0;
+    line-height: 45px;
+    color: #999;
+    padding: 0 10px;
+    transform: rotate(45deg);
+    font-size: 1.2rem;
+}
+.map-delete-icon:active{
+    color: #2898fd;
+}

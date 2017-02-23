@@ -1,0 +1,325 @@
+@charset "utf-8";
+/* CSS Document */
+.orgClick{
+    color: #fff;
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: url(../images/i.png) no-repeat -0px 6px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.searchOrg{
+    width: 100%;
+    position: relative;
+    line-height: 32px;
+    height:32px;
+    width: 100%;
+    overflow: hidden;
+    /* padding: 0 36px 0 2px; */
+}
+.searchOrg ul li input {
+    height: 30px;
+    line-height: 30px;
+    border: 0px;
+    box-shadow: none;
+    display: block;
+    position: relative;
+    background: none;
+}
+.lastInp{
+    float: left;
+    width: 20px;
+    height: 34px;	
+}
+.poporg.reveal-modal .modal_wrap {
+    overflow: hidden;
+}
+.sercOrg {
+    width: 100%;
+    position: relative;
+}
+.infright {
+    margin: 20px 0 20px 10px;
+    padding: 0 10px 10px 10px;
+    width: 416px;
+    border-bottom: 2px solid #f2f2f2;
+}
+.infleft {
+    margin: 20px 0px;
+    padding: 0 0 10px 10px;
+    width: 280px;
+    border-bottom: 2px solid #f2f2f2;
+}
+.h-selected{
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+    overflow-y: hidden;
+    position: relative;
+    padding-bottom: 6px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+.h-selected.height-open{
+    height: auto;
+    min-height: 54px;
+    max-height: 185px;
+    overflow-y: scroll;
+}
+.no-seclect ul{margin:0;padding:0;}
+.clearAll {
+    color: #2898fd;
+    cursor: pointer;
+}
+.no-seclect{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.no-seclect .fa-spin{
+	position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+}
+.orgPloy{
+	cursor: pointer;
+    background: url(../images/group-on.png) no-repeat;
+    position: relative;
+	padding: 5px 10px 5px 40px;
+    background-position: 18px 50%;
+}
+.orgPloy div {
+    /*max-width: 205px;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 20px;
+    border-radius: 3px;
+    /* height: 30px; */
+}
+.orgPloy:active {
+    background-color: #b9e0ff;
+}
+.orgPloy .addCur {
+    /*display: none;*/
+	position: absolute;
+    font-size: 0.9rem;
+    right: 0px;
+    padding: 5px 10px;
+    top: 0px;
+	z-index: 20;
+}
+.orgPloy:active .addCur {
+    display: inline-block;
+    background: transparent;
+    color: #2498ff;
+}
+.org-0 .orgPloy .turn-right {
+    top: 11px;
+    left: 6px;
+}
+.org-1 .orgPloy .turn-right {
+    top: 11px;
+    left: 16px;
+}
+.org-2 .orgPloy .turn-right {
+    top: 11px;
+    left: 20px;
+}
+.org-3 .orgPloy .turn-right {
+    top: 11px;
+    left: 36px;
+}
+.org-4 .orgPloy .turn-right {
+    top: 11px;
+    left: 54px;
+}
+.org-5 .orgPloy .turn-right {
+    top: 11px;
+    left: 72px;
+}
+.org-6 .orgPloy .turn-right {
+    top: 11px;
+    left: 88px;
+}
+.org-1 .orgPloy {
+    padding: 5px 10px 5px 50px;
+    background-position: 30px 50%;
+}
+.org-2 .orgPloy {
+    padding: 5px 10px 5px 52px;
+    background-position: 32px 50%;
+}
+.org-3 .orgPloy {
+    padding: 5px 10px 5px 70px;
+    background-position: 50px 50%;
+}
+.org-4 .orgPloy {
+    padding: 5px 10px 5px 90px;
+    background-position: 68px 50%;
+}
+.org-5 .orgPloy {
+    padding: 5px 10px 5px 106px;
+    background-position: 86px 50%;
+}
+.org-6 .orgPloy {
+    padding: 5px 10px 5px 124px;
+    background-position: 102px 50%;
+}
+.h-selected li{float:left}
+.h-selected .orgPloy div {
+    width: auto;
+}
+.orgPloy small{
+	display: inline-block;
+    font-size: 20px;
+    float: right;
+    font-family: "微软雅黑";
+    line-height: 28px;
+    margin-left: 4px;
+}
+.no-seclect .orgPloy small{
+	display:none;
+}
+.btn-group {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 15px 0;
+    /* margin-top: 25px; */
+}
+.btn-group .button.close-reveal-modal {
+    display: inherit;
+    position: inherit;
+    text-decoration: inherit;
+    outline: inherit;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0.6875rem 2rem;
+    top: inherit;
+    right: inherit;
+    width: auto;
+    height: auto;
+    background-color: #e9e9e9;
+    line-height: 24px;
+    font-size: 0.8875rem;
+    color: #333;
+    text-align: center;
+    font-family: inherit;
+    line-height: normal;
+    font-weight: normal;
+}
+.btn-group .close-reveal-modal:hover{
+	background:#d0d0d0;
+}
+.searchOrg ul li,.h-selected ul li{
+	float:left;
+	border: 1px solid #F1F1F1;
+    border-radius: 3px;
+}
+.h-selected ul li{
+    margin: 6px 0px 0 6px;
+}
+.searchOrg ul li{
+    margin: 0px 0px 0 5px;
+    width: 100%;
+    max-width: 250px;
+}
+.searchOrg ul li.lastInp{
+	border:none;
+}
+.h-selected  li:active .orgPloy{
+	 background-color:#2898FD;
+	 color:#fff;
+}
+.h-selected  li:active .orgPloy{
+    background-color: #B5E0FB;
+    color: #2898fd;
+}
+.searchOrg .orgPloy,.h-selected .orgPloy{
+	padding: 5px 28px 5px 25px;
+	background-color: #F1F1F1;
+	background-position: 6px 50%;
+}
+.searchOrg .no-active  .orgPloy,.h-selected .no-active .orgPloy{
+	background-color: #DFE4E8;
+}
+.searchOrg .no-active:hover  .orgPloy,.h-selected .no-active:hover .orgPloy{
+    background-color: #DFE4E8;
+	color:#333;
+}
+.searchOrg .no-active:hover small,.h-selected .no-active:hover small{
+	color:#333;
+}
+.searchOrg ul li .orgPloy small,.h-selected .orgPloy small {
+    display: inline-block;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    line-height: 28px;
+    margin-left: 4px;
+    position: absolute;
+    right: 8px;
+    top: 0px;
+}
+.searchOrg ul li .orgPloy small{
+    display: none;
+}
+.searchOrg ul li .orgPloy small i ,.h-selected .orgPloy small i{
+    font-size: 12px;
+    float: right;
+    position: relative;
+    top: 9px;
+    right: -2px;
+}
+@media only screen and (max-width: 641px) {
+	
+}
+
+
+
+.searchOrg_input{
+    height: 20px;
+}
+.searchOrg_input .orgPloy {
+    background: none;
+}
+.searchOrg_input .orgPloy{
+    padding: 0;
+}
+.searchOrg_input .orgPloy div{
+    font-size: 1rem;
+}
+.searchOrg_input ul li{
+    border: none;
+    display: inline-block;
+    width:auto;
+    max-width: none;
+    margin: 0px 5px 0 5px;
+    position: relative;
+}
+.searchOrg_input ul li:after {
+    display: block;
+    content: ",";
+    position: absolute;
+    bottom: -3px;
+    left: -6px;
+}
+.searchOrg_input ul li:first-child:after{
+    display: none;
+}
+
+.orgSelect{
+
+}

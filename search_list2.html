@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>活动APP-搜索列表页</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta content="telephone=no" name="format-detection">
+        <link rel="stylesheet" href="style/layout.css"/>
+        <link rel="stylesheet" href="style/common.css"/>
+        <link rel="stylesheet" href="style/index.css"/>
+        <link rel="stylesheet" href="style/weui_icon_font.css"/>
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!--fastclick-->
+        <script src="javascript/fastclick.js" type="text/javascript"></script>
+    </head>
+  <body ontouchstart>
+  <div class="layout">
+    <header class="header_normal hearder_filter">
+        <div class="header_left"><a href="javascript:history.go(-1);" ><i class="fa fa-angle-left left"></i></a></div>
+        <div class="header_title">
+            <div class="search_box">
+                <div class="search_top">
+                    <form action="#" name="search_active1">
+                        <select required="" title="" class="s_select" id="select1" >
+                            <option value="活动">活动</option>
+                            <option value="主办方" selected>主办方</option>
+                        </select>
+                        <input class="input_text search_text" id="keyword1" type="text" name="keyword"  placeholder="搜索关键词" value="鼓楼区" autocomplete="off">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="header_right">
+            <a class="submit_search" id="submit_search1"><i class="fa fa-search"></i></a>
+        </div>
+        <div class="scroll_filte">
+            <div class="filter_box bg-whight">
+                <ul class="small-block-grid-2">
+                    <li>
+                        <div class="divselect filter_divselect" id="divselect1">
+                            <cite>类别</cite><i class="fa fa-caret-down"></i>
+                            <ul>
+                                <li class="active"><a href="javascript:void(0);" selectid="0">全部</a></li>
+                                <li><a href="javascript:void(0);" selectid="1">党委</a></li>
+                                <li><a href="javascript:void(0);" selectid="2">总支</a></li>
+                                <li><a href="javascript:void(0);" selectid="3">支部</a></li>
+                            </ul>
+                        </div>
+                        <input name="" type="hidden" value="" id="inputselect1"/>
+                    </li>
+                    <li>
+                        <div class="divselect filter_divselect" id="divselect2">
+                            <cite>地区</cite><i class="fa fa-caret-down"></i>
+                            <ul>
+                                <li class="active"><a href="javascript:void(0);" selectid="0">全部</a></li>
+                                <li><a href="#" selectid="1">福州</a></li>
+                                <li><a href="#" selectid="2">厦门</a></li>
+                                <li><a href="#" selectid="3">漳州</a></li>
+                                <li><a href="#" selectid="4">泉州</a></li>
+                                <li><a href="#" selectid="5">南平</a></li>
+                                <li><a href="#" selectid="6">三明</a></li>
+                                <li><a href="#" selectid="7">莆田</a></li>
+                                <li><a href="#" selectid="8">龙岩</a></li>
+                                <li><a href="#" selectid="9">宁德</a></li>
+                                <li><a href="#" selectid="10">平潭综合实验区</a></li>
+                            </ul>
+
+                        </div>
+                        <input name="" type="hidden" value="" id="inputselect2"/>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    <div class="content">
+      <div class="opacity_bg"></div>
+      <div class="list-data" >
+          <div class="row" id="listData">
+              <div class="scroller">
+                  <ul class="cells member zb_member no-margin-t no-margin-b">
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区鼓楼区鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部福州市鼓楼区东街</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li><li>
+                      <a href="#" class="cell one_line">
+                          <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                          <div class="cell_primary">
+                              <div class="info">
+                                  <div class="member_name">福州市鼓楼区东街街道党福州市鼓楼区东街街道党委总支部委总支部</div>
+                                  <div class="sec_info">
+                                      <i class="fa fa-map-marker"></i>
+                                      <span>福建省福州市福马路革命历史纪念馆</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#" class="cell one_line">
+                              <div class="cell_title no-margin-r"><div class="header_box"><img src="images/default.png"></div></div>
+                              <div class="cell_primary">
+                                  <div class="info">
+                                      <div class="member_name">福州市鼓楼区东街街道党委总支部</div>
+                                      <div class="sec_info">
+                                          <i class="fa fa-map-marker"></i>
+                                          <span>福建省福州市福马路革命历史纪念馆</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
+
+                  </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="popup">
+        <div id="search_box" class="weui-popup-container">
+          <div class="weui-popup-modal">
+              <!--弹出内容-->
+              <header class="header_normal popup_header">
+                  <div class="header_left"><a class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                  <div class="header_title">
+                      <div class="search_box">
+                          <div class="search_top">
+                              <form action="#" name="search_active">
+                                  <select required="" title="" class="s_select" id="select">
+                                      <option value="活动">活动</option>
+                                      <option value="主办方">主办方</option>
+                                  </select>
+                                  <input class="input_text search_text" id="keyword" type="text" name="keyword"  placeholder="搜索关键词" value="" autocomplete="off">
+                              </form>
+                          </div>
+                          <div class="search_suggest">
+                              <ul>
+                                  <li><a href="javascript:void(0);" ><em>鼓楼</em></a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>市政府</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>区</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>的地方市政府</a></li>
+                                  <li><a href="javascript:void(0);" ><em>鼓楼</em></a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>市政府</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>区</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>的地方市政府</a></li>
+                                  <li><a href="javascript:void(0);" ><em>鼓楼</em></a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>市政府</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>区</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>的地方市政府</a></li>
+                                  <li><a href="javascript:void(0);" ><em>鼓楼</em></a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>市政府</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>区</a></li>
+                                  <li><a href="javascript:void(0);"><em>鼓楼</em>的地方市政府</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="header_right">
+                          <a id="submit_search"><i class="fa fa-search"></i></a>
+                  </div>
+
+              </header>
+              <div class="content bg-whight popup_content">
+                  <div class="">
+                      <div class="s_history" id="s_history">
+                          <div class="s_history_hd clearfix">
+                              <span class="search_tip"><i class="fa fa-history"></i>历史搜索</span>
+                              <span class="search_tip_btn" id="delete_history"><i class="fa fa-trash"></i></span>
+                          </div>
+                          <div class="s_history_bd" >
+                              <ul class="histroy_label clearfix">
+                                  <li><a>鼓楼区</a></li>
+                                  <li><a>鼓楼助学楼区</a></li>
+                                  <li><a>鼓楼区</a></li>
+                                  <li><a>鼓楼</a></li>
+                                  <li><a>鼓楼区鼓楼区</a></li>
+                                  <li><a>鼓楼区</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="s_history margin-t" id="hot_history">
+                          <div class="s_history_hd clearfix">
+                              <span class="search_tip"><i class="fa fa-fire"></i>热门搜索</span>
+                          </div>
+                          <div class="s_history_bd">
+                              <ul class="histroy_label clearfix">
+                                  <li><a>福州</a></li>
+                                  <li><a>厦门</a></li>
+                                  <li><a>鼓楼区</a></li>
+                              </ul>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+    </div>
+    <div class="javascript">
+      <script src="javascript/jquery-2.1.4.min.js"></script>
+      <script src="javascript/common.js"></script>
+      <script src="javascript/search.js"></script>
+      <script src="javascript/jquery-weui.js"></script>
+      <!--下拉-->
+      <script src="javascript/divselect.js"></script>
+        <script src="javascript/iscroll4.js"></script>
+      <script type="text/javascript">
+          var myScroll=new iScroll('listData', {
+              useTransition: true,
+              vScrollbar: false,
+              hScroll:false
+              //preventDefaultException:'a'
+          });
+          var setScrollerHeight=function(){
+              var h=$(window).height();
+              var hh=$('header').height()+$('.bottom').height();
+              $('#listData').css('height',(h-hh-1)+'px');
+              myScroll.refresh();
+          };
+          $(function(){
+              setScrollerHeight();
+          });
+          var sort1=function(){
+              //alert($('#inputselect1').val());//选择的value(selectValue)
+              $.showLoading('加载中');
+              setTimeout(function(){
+
+                  $.hideLoading();
+              },1500);
+          };
+          $.divselect("#divselect1","#inputselect1",sort1);
+          //选择完成后执行的回调函数
+
+          var sort2=function(){
+              $.showLoading('加载中');
+              setTimeout(function(){
+
+                  $.hideLoading();
+              },1500);
+          };
+          $.divselect("#divselect2","#inputselect2",sort2);
+
+      </script>
+      <!--搜索-->
+        <script>
+            $('#keyword1').bind('focus click',function(){
+                $('#search_box').popup();
+                $('#keyword').val($(this).val()).focus();
+            });
+            $('#submit_search1').on('click',function(){
+                //提交搜索关键词
+                var form=$('form[name=search_active1]');
+                if($('#keyword1').val()!=''){
+                    if($('#select1').val()=='活动'){
+                        form.attr('action','search_list1.html');
+                    }else{
+                        form.attr('action','search_list2.html');
+                    }
+                    form.submit();
+                }
+            });
+
+            $('#keyword').bind('keyup',function(){
+                if($(this).val()==''){
+                    $(this).closest('.search_box').find('.search_suggest').hide();
+                }else{
+                    $(this).closest('.search_box').find('.search_suggest').show();
+                }
+            }).bind('focus click',function(){
+                if($(this).val()!=''){
+                    $(this).closest('.search_box').find('.search_suggest').show();
+                }
+            });
+            $('#submit_search').on('click',function(){
+                //提交表单
+                $('.search_suggest').hide();
+                var form=$('form[name=search_active]');
+                if($('#keyword').val()!=''){
+                    if($('#select').val()=='活动'){
+                        form.attr('action','search_list1.html');
+                    }else{
+                        form.attr('action','search_list2.html');
+                    }
+                    form.submit();
+                }
+            });
+            //推荐关键词搜索
+            $('.search_suggest ul').on('click','li',(function(){
+                var s=$(this).text();
+                $('#keyword').val(s);
+                //提交搜索关键词
+                $('#submit_search').trigger('click');
+            }));
+            //点击历史记录时搜索
+            $('#s_history .s_history_bd').on('click','li',function(){
+                var s= $(this).text();
+                $('#keyword').val(s);
+                //提交搜索关键词
+                $('#submit_search').trigger('click');
+            });
+            //点击热门记录时搜索
+            $('#hot_history .s_history_bd').on('click','li',function(){
+                var s= $(this).text();
+                $('#keyword').val(s);
+                //提交搜索关键词
+                $('#submit_search').trigger('click');
+            });
+            /*删除历史记录*/
+            $('#delete_history').on('click',function(){
+                $.confirm("确认删除全部历史记录","",function(){
+                    //$.toast()
+                    $('#s_history').hide();
+                });
+
+            });
+            $('select').searchableSelect();
+        </script>
+    </div>
+  </div>
+  </body>
+</html>

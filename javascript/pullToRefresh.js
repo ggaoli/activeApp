@@ -1,0 +1,120 @@
+/*!
+ * pull to refresh v3.0
+ *author:wallace
+ *2015-10-15
+ *qq447363121
+ *陈国华
+ */
+var refresher = {
+	info: {
+		"pullDownLable": "下拉刷新",
+		"pullingDownLable": "释放立即刷新",
+		"pullUpLable": "继续拖动,查看更多",
+		"pullingUpLable": "释放加载更多",
+		"loadingLable": "加载中..."
+	},
+	init: function(parameter) {
+		var wrapper = document.getElementById(parameter.id);
+		var div = document.createElement("div");
+		div.className = "scroller";
+		wrapper.appendChild(div);
+		var scroller = wrapper.querySelector(".scroller");
+		var list = wrapper.querySelector("#" + parameter.id + " ul");
+		scroller.insertBefore(list, scroller.childNodes[0]);
+		var pullDown = document.createElement("div");
+		pullDown.className = "pullDown";
+		var loader = document.createElement("div");
+		loader.className = "pullDownIcon";
+		pullDown.appendChild(loader);
+		var pullDownLabel = document.createElement("div");
+		pullDownLabel.className = "pullDownLabel";
+		pullDown.appendChild(pullDownLabel);
+		scroller.insertBefore(pullDown, scroller.childNodes[0]);
+		var pullUp = document.createElement("div");
+		pullUp.className = "pullUp";
+		/*var loader = document.createElement("div");
+		loader.className = "pullUpIcon";*/
+        var loader = document.createElement("i");
+        loader.className = "pullUpIcon lazy-preloader";
+		pullUp.appendChild(loader);
+		var pullUpLabel = document.createElement("div");
+		pullUpLabel.className = "pullUpLabel";
+		var content = document.createTextNode(refresher.info.pullUpLable);
+		pullUpLabel.appendChild(content);
+		pullUp.appendChild(pullUpLabel);
+		scroller.appendChild(pullUp);
+		var pullDownEle = wrapper.querySelector(".pullDown");
+		var pullDownOffset = pullDownEle.offsetHeight;
+		var pullUpEle = wrapper.querySelector(".pullUp");
+		var pullUpOffset = pullUpEle.offsetHeight;
+		this.scrollIt(parameter, pullDownEle, pullDownOffset, pullUpEle, pullUpOffset);
+	},
+	scrollIt: function(parameter, pullDownEle, pullDownOffset, pullUpEle, pullUpOffset) {
+		eval(
+
+           /* preventDefaultException:'a',\*/
+		parameter.id + "= new iScroll(\
+									parameter.id,\
+									 {\
+										 useTransition: true,\
+										 vScrollbar: false,\
+										 topOffset: pullDownOffset,\
+										 onRefresh: function () {\
+														  refresher.onRelease(pullDownEle,pullUpEle);\
+																		 },\
+										onScrollMove: function () {\
+														     refresher.onScrolling(this,pullDownEle,pullUpEle,pullUpOffset);\
+																		},\
+										onScrollEnd: function () {\
+													       refresher.onScrollEnd(parameter,pullDownEle,parameter.pullDownAction,pullUpEle,parameter.pullUpAction);\
+																		}\
+										})"
+					);
+	},
+	onScrolling: function(e, pullDownEle, pullUpEle, pullUpOffset) {
+		if (e.y > -(pullUpOffset)&&!pullDownEle.className.match('loading')) {
+			pullDownEle.classList.remove("flip");
+			pullDownEle.querySelector('.pullDownLabel').innerHTML = refresher.info.pullDownLable;
+			pullDownEle.querySelector('.pullDownIcon').style.display = "block";
+			e.minScrollY = -pullUpOffset;
+		}
+		if (e.scrollerH < e.wrapperH &&e.y>e.maxScrollY-pullUpOffset&&pullUpEle.className.match("flip") || e.scrollerH > e.wrapperH &&e.y>e.maxScrollY-pullUpOffset&&pullUpEle.className.match("flip") ) {
+			pullUpEle.classList.remove("flip");
+			pullUpEle.querySelector('.pullUpLabel').innerHTML = refresher.info.pullUpLable;
+		}		
+		if (e.y > 0&&!pullUpEle.className.match('loading')&&!pullDownEle.className.match('loading')) {
+			pullDownEle.classList.add("flip");
+			pullDownEle.querySelector('.pullDownLabel').innerHTML = refresher.info.pullingDownLable;
+			e.minScrollY = 0;
+		}
+		if (e.scrollerH < e.wrapperH && e.y < (e.minScrollY - pullUpOffset) &&!pullDownEle.className.match('loading')&&!pullUpEle.className.match('loading')|| e.scrollerH > e.wrapperH && e.y < (e.maxScrollY - pullUpOffset)&&!pullDownEle.className.match('loading')&&!pullUpEle.className.match('loading')) {
+			pullUpEle.classList.add("flip");
+			pullUpEle.querySelector('.pullUpLabel').innerHTML = refresher.info.pullingUpLable;
+		}
+
+	},
+	onRelease: function(pullDownEle, pullUpEle) {
+		if (pullDownEle.className.match('loading')) {
+			pullDownEle.classList.toggle("loading");
+			pullDownEle.querySelector('.pullDownLabel').innerHTML = refresher.info.pullDownLable;
+		}
+		if (pullUpEle.className.match('loading')) {
+			pullUpEle.classList.toggle("loading");
+			pullUpEle.querySelector('.pullUpLabel').innerHTML = refresher.info.pullUpLable;
+		}
+	},
+	onScrollEnd: function(parameter, pullDownEle, pullDownAction, pullUpEle, pullUpAction) {
+		if (pullDownEle.className.match('flip')&&!pullDownEle.className.match('loading')) {
+			pullDownEle.classList.add("loading");
+			pullDownEle.classList.remove("flip");
+			pullDownEle.querySelector('.pullDownLabel').innerHTML = refresher.info.loadingLable;
+			if (pullDownAction) pullDownAction(parameter.id);
+		}
+		if (pullUpEle.className.match('flip')&&!pullUpEle.className.match('loading')) {
+			pullUpEle.classList.add("loading");
+			pullUpEle.classList.remove("flip");
+			pullUpEle.querySelector('.pullUpLabel').innerHTML = refresher.info.loadingLable;
+			if (pullUpAction) pullUpAction(parameter.id);
+		}
+	}
+}

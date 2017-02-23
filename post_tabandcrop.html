@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>活动APP-海报选择</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/weui_icon_font.css">
+    <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--海报裁剪-->
+    <link rel="stylesheet" type="text/css" href="style/cropper.css" />
+    <!--fastclick-->
+    <script src="javascript/fastclick.js" type="text/javascript"></script>
+</head>
+<body >
+<div class="layout">
+    <header class="header_normal">
+        <div class="header_left"><a  href="javascript:history.go(-1);"><i class="fa fa-angle-left left"></i></a></div>
+        <div class="header_title">设置海报</div>
+        <div class="header_right">
+            <a href="javascript:void(0);" class="p-color sure_upload">确定</a><!--createActivity.html?img=a2.jpg-->
+        </div>
+    </header>
+    <div class="margin-t50">
+        <div class="post_warpper uploader-container">
+            <a class="post post_lg" id="filePicker">
+                <div class="post-img img-preview" href="javascript:void(0);" id="img-preview" >
+                    <img src="images/post_bg.jpg" alt="" >
+                </div>
+                <div class="post_upload">
+                    <i class="icon_upload"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="recommand_post_warppr">
+            <div class="cells bg-whight  no-margin-b no-margin-t content-padding">
+                <div class="cells_head">
+                    <div class="cells_title"><span>推荐海报</span></div>
+                    <div class="cells_more margin-r" >
+                        <a  class="p-color change_post" id="change_post"><i class="fa fa-refresh"></i>换一换</a>
+                    </div>
+                </div>
+            </div>
+            <div class="picture-select-box picture-select-box-recommand" >
+                <ul class="small-block-grid-3  picture-select-ul clearfix">
+                    <li><img  alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                    <li><img  alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                    <li><img  alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                    <li><img  alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                    <li><img  alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                    <li><img  alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                </ul>
+            </div>
+            <div class="cells">
+                <a class="cell open-popup"  data-target="#post_recommand">
+                    <!--<div class="cell_title" style="width: 6rem">更多推荐海报</div>-->
+                    <div class="cell_primary">更多推荐海报</div>
+                    <div class="cell_ft_icon cell_ft_right"></div>
+                </a>
+                <a class="cell">
+                    <div class="cell_title" style="width: 100% ;text-align: left">一张漂亮的海报，能让你的活动锦上添花，带来更多用户报名 及增加传播效果，吸引点击量！</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="popup">
+        <div id="cropImg" class="weui-popup-container">
+            <div class="weui-popup-modal" style="background-color: #000">
+                <!--弹出内容-->
+                <header class="header_normal" style="position: initial;">
+                    <div class="header_left"><a class="close-popup give-up-upload-btn"><i class="fa fa-angle-left left"></i></a></div>
+                    <div class="header_title">海报裁切</div>
+                    <div class="header_right"><a class="p-color upload-btn close-popup" href="#" id="clipBtn"> 确定</a></div>
+                </header>
+                <div class="no-margin-b" >
+                    <div class="crop_box cropper-wraper">
+                        <div class="img-container">
+                            <img src="" alt="Picture">
+                        </div>
+                        <div class="img-preview preview-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="post_recommand" class="weui-popup-container">
+            <div class="weui-popup-modal bg_darke" >
+                <!--弹出内容-->
+                <header class="header_normal" style="position: initial;">
+                    <div class="header_left"><a class="close-popup give-up-upload-btn"><i class="fa fa-angle-left left"></i></a></div>
+                    <div class="header_title">推荐海报</div>
+                </header>
+                <div class="no-margin-b" >
+                    <div class="navtab navtab1 pic_tab">
+                        <div class="swiper-container swiper-container_tab_head">
+                            <div class="swiper-wrapper" style="width:1280px;">
+                                <div class="swiper-slide" >
+                                    <div class="swiper-pagination">
+                                    </div>
+                                    <div class="swiper-scrollbar">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 如果需要分页器-->
+                        </div>
+                        <div class="swiper-container swiper-container_tab_body">
+                            <div class="swiper-wrapper picture-select-box picture-select-box-more-recommand" >
+                                <div class="swiper-slide">
+                                    <div class="">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+                                            <li><img data-img="images/post-images/convention/1.png" src="images/post-images-thumb/convention/1.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/2.png" src="images/post-images-thumb/convention/2.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/3.png" src="images/post-images-thumb/convention/3.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/4.png" src="images/post-images-thumb/convention/4.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/5.png" src="images/post-images-thumb/convention/5.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/6.png" src="images/post-images-thumb/convention/6.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/7.png" src="images/post-images-thumb/convention/7.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/8.png" src="images/post-images-thumb/convention/8.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                            <li><img data-img="images/post-images/convention/9.png" src="images/post-images-thumb/convention/9.png" alt=""><i class="weui_icon_success weui_icon_select"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class=" center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class=" center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class=" center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class=" center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class=" center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class=" center-img">
+                                        <ul class="small-block-grid-3  picture-select-ul clearfix">
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 如果需要分页器-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="javascript">
+        <script src="javascript/jquery-2.1.4.min.js"></script>
+        <script src="javascript/jquery-weui.js"></script>
+        <!--公共js-->
+        <script src="javascript/common.js"></script>
+        <!--设置海报容器滚动-->
+        <script>
+            /*$(function(){
+                setSwiperH();
+            });
+            $(window).resize(function() {
+                setSwiperH();
+            });
+            function setSwiperH(){
+                var wh=$(window).height();
+                var hh=$('.header_normal').outerHeight();
+                var ph=$('.post_warpper').outerHeight();
+                var bh=$('.button_group').outerHeight();
+                var th=$('.swiper-container_tab_head').outerHeight();
+                var ch=$('.cells').height();
+                $('.layout > .content').removeAttr('style');
+                //$('.tab_warppr .swiper-container_tab_body').css('height',wh-hh-ph-bh-th-ch).css('overflow-y','scroll');
+                $('.tab_warppr .picture-select-box .swiper-slide').css('height',wh-hh-ph-bh-th-ch).css('overflow-y','scroll');
+            }*/
+        </script>
+        <!--图片居中-->
+        <script src="javascript/img_center.js"></script>
+        <!--tab插件-->
+        <script src="javascript/swiper.js"></script>
+        <!--推荐海报swiper-->
+        <script>
+            /*查看大图*/
+            $(document).on('click','.picture-select-box-recommand ul li',function(e){
+                var _this=this;
+                var recommandBox=$(_this).closest('.picture-select-box-recommand');
+                var index=$(_this).index();
+
+                var oSrc=$('#img-preview img').attr("src");
+                var picSrc=$(_this).find('img').attr("data-img");
+                if(oSrc!=picSrc){
+                    $(_this).toggleClass('select');
+                    $(_this).siblings().removeClass('select');
+                    $.showLoading('正在设置');
+                    $('#img-preview img').attr('src',picSrc).removeAttr('style');
+                    $('#img-preview img').load(function(){
+                        $.hideLoading();
+                        //$.toast("操作成功")
+                    });
+                }else{
+                    $(_this).toggleClass('select');
+                    $(_this).siblings().removeClass('select');
+                    $('#img-preview img').attr('src','images/post_bg.jpg');
+                }
+                //openSwiper(recommandBox,index,'');
+            });
+            //初始化函数
+            function openSwiper(Box,index,title){
+                //var l=$(Box).find('li');
+                var finallyParent=$('<div class="swiper recommand_box"></div>');
+                var swiperImgs=$(Box).find('li');
+                /*构造swiper-modal的html*/
+                var swiperModal=$('<div class="swiper-modal"></div>');
+                var container=$('<div class="swiper-container swiper1" ></div>');
+                var swiperWrapper=$('<div class="swiper-wrapper"></div>');
+                var other='' +
+                        '<div class="swiper-header"><div class="swiper-header-left"><a href="javascript:void(0);" class="close-swiper"><i class="fa fa-angle-left left"></i></a></div>' +
+                        '<div class="swiper-pagination swiper-pagination1" ></div>' +
+                        '<div class="swiper-title">'+title+'</div>' +
+                        '</div>' +
+                        '<div class="swiper-bottom"><a class=" sure_post">设为海报</a></div>';
+                var slider='',src='';
+
+                for(var i=0;i<swiperImgs.length;i++){
+                    src=$(swiperImgs[i]).find('img').attr('data-img');
+                    slider='<div class="swiper-slide"><div class="swiper-zoom-container">' +
+                    '<img data-src="'+src+'" class="swiper-lazy">' +
+                    '<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div></div>';
+                    $(swiperWrapper).append(slider);
+                }
+                $(container).append(swiperWrapper);
+                $(swiperModal).append(other);
+                $(swiperModal).append(container);
+                $(finallyParent).append(swiperModal);
+                $('body').append(finallyParent);
+                /*构造swiper-modal的html完毕*/
+                var swipercontainer=$(finallyParent).find('.swiper-container');
+                $(swipercontainer).parent().show();
+                $(swipercontainer).fadeIn();
+                $(swipercontainer).addClass('swiper-container-visible');
+                $(swipercontainer).parent().addClass('swiper-modal-visible');
+                var pagination=$(swiperModal).find('.swiper-pagination');
+
+                //初始化并打开swiper
+                var s=new Swiper(swipercontainer, {
+                    pagination: pagination,
+                    paginationFractionRender: function (swiper, currentClassName, totalClassName) {
+                        return '<span class="' + currentClassName + '"></span>' +
+                                ' / ' +
+                                '<span class="' + totalClassName + '"></span>';
+                    },
+                    paginationType : 'fraction',
+                    paginationClickable: true,
+                    initialSlide:index,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    preloadImages: false,
+                    lazyLoading: true,
+                    /*zoom : true,
+                    zoomToggle :false,*/
+                    //zoomMax :3,
+                    onInit: function(swiper){
+                        //alert('');
+                    }
+                });
+                s.onResize();
+            }
+            //初始化关闭按钮
+            $(document).on('click','.recommand_box .close-swiper',function(e){
+                var swipercontainer=$(this).closest('.swiper-modal').find('.swiper-container');
+                swipercontainer.removeClass('swiper-container-visible');
+                swipercontainer.parent().removeClass('swiper-modal-visible');
+                swipercontainer.fadeOut();
+                swipercontainer.parent().fadeOut;
+                setTimeout(function(){
+                    swipercontainer.parent().hide();
+                    swipercontainer.parent().parent().remove();
+                },150);
+            });
+            /*确定推荐海报，与更多同用*/
+            $(document).on('click','.recommand_box .sure_post',function(e){
+                var oSrc=$('#img-preview img').attr("src");
+                var swipercontainer=$(this).closest('.swiper-modal').find('.swiper-container');
+                var picSrc=$(swipercontainer).find('.swiper-slide-active img').attr("src");
+                if(oSrc!=picSrc){
+                    if(!picSrc){
+                        $.toast('请选择海报','text');
+                    }else{
+                        $.showLoading('正在设置');
+                        setTimeout(function(){
+                            $('#img-preview img').attr('src',picSrc).removeAttr('style');
+                            $('#img-preview img').load(function(){
+                                $.hideLoading();
+                                $.toast("操作成功", function() {
+                                    if($('.weui-popup-container.weui-popup-container-visible')){
+                                        $.closePopup();
+                                        $(document).scrollTop(0);
+                                    }
+                                    $('.recommand_box .close-swiper').trigger('click');
+                                });
+                            })
+                        },1000);
+                    }
+                }else{
+                    $.toast('请稍后..','text');
+                }
+            });
+
+            /*换一组推荐海报*/
+            $(function(){
+                var container=$('.picture-select-box-recommand');
+                randCommandPost(container);
+            });
+            $(document).on('click','#change_post',function(e){
+                var container=$('.picture-select-box-recommand');
+                $.toast('更换中...','text');
+                randCommandPost(container);
+
+            });
+            function randCommandPost(container){
+                var l=$(container).find('ul li').length;
+                var lis=$(container).find('ul li');
+                $.ajax({
+                    type: "POST",
+                    url: 'javascript/post-images.json',
+                    dataType: 'json',
+                    beforeSend: function () {
+                    },
+                    success: function (imgData) {
+                        for(var i= 0;i<l;i++){
+                            var arand=parseInt(7*Math.random());
+                            var brand=parseInt(9*Math.random());
+                            $(lis[i]).removeClass('select');
+                            $(lis[i]).find('img').attr('data-img','images/post-images/'+imgData.postType[arand]+'/'+((brand + 1))+'.png');
+                            $(lis[i]).find('img').attr('src','images/post-images-thumb/'+imgData.postType[arand]+'/'+((brand  + 1))+'.png');
+                        }
+                        //$(container).find('ul').html(lis);
+                    }
+                });
+
+            }
+        </script>
+        <!--更多推荐海报swiper-->
+        <script>
+            /*更多推荐海报swiper*/
+            /*tab 头部*/
+            var swiper1;
+            var swiper1_1;
+            $('.open-popup').on('click',function(){
+                setTimeout(function(){
+                    if(!swiper1){
+                        var container=$('.swiper-container_tab_body');
+                        centerContainerPic(container);
+                        swiper1 = new Swiper('.navtab1  .swiper-container_tab_body', {
+                            pagination: '.navtab1 .swiper-pagination',
+                            paginationClickable: true,
+                            paginationBulletRender: function (swiper,index, className) {
+                                var str=['会议会展','学习培训','人文庆典','互动体验','抗震救灾','帮扶慰问','捐赠义卖','其他活动'];
+                                var width=5;
+                                var w_width=width*str.length;
+                                $('.navtab1 .swiper-container_tab_head .swiper-wrapper').css('width',w_width+'rem');
+                                return '<span class="' + className + '" style="width:'+width+'rem">' + str[index]+ '</span>';
+                            },
+                            speed:300,
+                            scrollbar:'.navtab1 .swiper-scrollbar',
+                            scrollbarHide : false,
+                            onlyExternal:false,
+                            onSlideChangeStart: function(swiper){
+                                var activeIndex=swiper.activeIndex;
+                                var activeSwiper=swiper.slides[activeIndex];
+                                var l=swiper.slides.length;
+                                //tab按钮滚动
+                                //if(activeIndex>1){
+                                    //var
+                                if($(window).width()<=640){
+
+                                    var w=$(window).width();
+                                    var bs=swiper.bullets;//所有按钮
+                                    var activebullet=bs[activeIndex];//活动按钮
+                                    var firstbullet=bs[0];//第一个按钮
+                                    var traformS=-$(firstbullet).offset().left;//初始位置
+                                    var ableft=$(activebullet).offset().left;
+                                    var bw=$(activebullet).width();//每个按钮长度
+                                    var allw=bw*l;//按钮总长度
+                                    var traformW;//移动的距离
+                                    var maxtraformW=allw-w;
+                                    var splitspace=bw;
+                                    var speed=1;
+                                    /*方向1*/
+                                    if(ableft>splitspace&&traformS<maxtraformW){
+                                        traformW=ableft-splitspace;
+                                        if(maxtraformW-traformS>=splitspace){
+                                            setTimeout(function(){
+                                                var i=0;
+                                                var mytime = setInterval(function () { showme() }, speed);
+                                                function showme() {
+                                                    swiper1_1.setWrapperTranslate(-(traformS+i));
+                                                    if(traformS+i>=maxtraformW){
+                                                        clearInterval(mytime);
+                                                    }
+                                                    if (i >= traformW){
+                                                        clearInterval(mytime);
+                                                    }
+                                                    i += 1;
+                                                }
+                                            },200);
+                                        }else{
+                                            if(w-ableft<bw){
+                                                setTimeout(function(){
+                                                    var i=0;
+                                                    var mytime = setInterval(function () { showme() }, speed);
+                                                    function showme() {
+                                                        swiper1_1.setWrapperTranslate(-(traformS+i));
+                                                        if(traformS+i>=maxtraformW){
+                                                            clearInterval(mytime);
+                                                        }
+                                                        if (i >= traformW){
+                                                            clearInterval(mytime);
+                                                        }
+                                                        i += 1;
+                                                    }
+                                                },200);
+                                            }
+                                        }
+                                    }
+                                    /*方向2*/
+                                    if(ableft<splitspace){
+                                        if(ableft>0){
+
+                                        }else{
+                                            traformW=-(ableft-splitspace);
+                                            setTimeout(function(){
+                                                var i=0;
+                                                var mytime = setInterval(function () { showme1() }, speed);
+                                                function showme1() {
+                                                    swiper1_1.setWrapperTranslate(-(traformS)+i);
+                                                    if(-(traformS)+i>=0){
+                                                        clearInterval(mytime);
+                                                    }
+                                                    if (i >= traformW){
+                                                        clearInterval(mytime);
+                                                    }
+                                                    i += 2;
+                                                }
+                                            },200);
+                                        }
+
+                                    }
+                                }
+                                //}
+
+                                //海报加载
+
+                                if($(activeSwiper).find('li').length==0){//海报未加载
+                                    $(activeSwiper).prepend('<div class="swiper-lazy-preloader"></div>');
+                                    $.ajax({
+                                        type:"POST",
+                                        url:'javascript/post-images.json',
+                                        dataType:'json',
+                                        beforeSend:function(){
+                                        },
+                                        success:function(imgData){
+                                            var imgHtml='';
+                                            if(imgData !=null){
+                                                for(var i=0;i<9;i++){
+                                                    imgHtml+='<li><img data-img="images/post-images/'+imgData.postType[activeIndex]+'/'+(i+1)+'.png" '+' src="images/post-images/'+imgData.postType[activeIndex]+'/'+(i+1)+'.png" alt="11">' +
+                                                    '<i class="weui_icon_success weui_icon_select"></i></li>';
+                                                }
+                                            }
+                                            $(activeSwiper).find('ul').append(imgHtml).hide();
+
+                                            //判断是否加载完毕
+                                            var $img=$(activeSwiper).find('li img');
+                                            var imgCount=$img.length;
+                                            $img.load(function(){
+                                                imgCount--;
+                                                if(imgCount==0){
+                                                    //加载完成则使图片显示并居中
+                                                    $(activeSwiper).find('.swiper-lazy-preloader').remove();
+                                                    $(activeSwiper).find('ul').show();
+                                                    //centerContainerPic(activeSwiper);
+                                                }
+                                            });
+
+                                        }
+                                    });
+                                }else{
+                                    //海报已加载
+                                }
+
+
+                            }
+                        });
+                        swiper1_1= new Swiper('.navtab1  .swiper-container_tab_head', {
+                            direction: 'horizontal',
+                            slidesPerView: 'auto',
+                            mousewheelControl: true,
+                            freeMode: true
+                        });
+                    }
+                },300);
+            });
+            /*确定推荐海报*/
+            $(document).on('click','.navtab .swiper-container_tab_body  li',function(e){
+                var _this=this;
+                var recommandBox=$(_this).closest('.swiper-slide');
+                var index=$(_this).index();
+                var title=$('.swiper-container_tab_head .swiper-pagination-bullet-active').text();
+                openSwiper(recommandBox,index,title);
+            });
+        </script>
+        <!--海报上传,裁切-->
+        <script src="javascript/webuploader.js"></script>
+        <script type="text/javascript" src="javascript/cropper.min.js"></script>
+        <!--上传初始化-->
+        <script type="text/javascript" src="javascript/uploader_n.js"></script>
+
+    </div>
+</div>
+<div class="tab_opacity_bg"></div>
+
+</body>
+</html>

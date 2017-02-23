@@ -1,0 +1,58 @@
+//全局变量
+$weiruan: "微软雅黑", arial, \5b8b\4f53, sans-serif;
+$border:1px solid #e7e7e7;
+$borderC: #d7d7d7;
+$proColor:#2498ff;
+$warnColor:#ff4242;
+$swithHeight:30px;
+$weuiDialogBackgroundColor:#FAFAFC;
+$cellGapV:1em;
+$cellGapH:1em;
+$backgroundColor: #f5f5f5;
+$proGap:0.8rem;
+//全局函数
+
+@mixin transition($transition){
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transform-origin($origin){
+  -webkit-transform-origin:$origin;
+  -moz-transform-origin:$origin;
+  -ms-transform-origin:$origin;
+  -o-transform-origin:$origin;
+  transform-origin:$origin;
+}
+
+@mixin opacity($opacity){
+  opacity:$opacity;
+  filter:alpha(opacity=$opacity * 100);
+}
+@mixin box-shadow($shadow){
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+@mixin border-radius($radius){
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  border-radius:$radius;
+}
+
+@mixin transform($transForm){
+  -webkit-transform: $transForm;
+  -moz-transform: $transForm;
+  -ms-transform: $transForm;
+  -o-transform: $transForm;
+  transform: $transForm;
+
+}
+
+@mixin animation($animation){
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  animation: $animation;
+}

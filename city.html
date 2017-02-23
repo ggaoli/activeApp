@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>城市</title>
+    <link href="style/layout.css" rel="stylesheet" type="text/css">
+    <link href="style/common.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style/font-awesome.min.css"/>
+    <link rel="stylesheet" href="style/cmsApp.css"/>
+    <script src="javascript/fastclick.js" type="text/javascript"></script>
+</head>
+<body style="overflow: hidden">
+<div class="layout">
+    <header class="header_normal" style="position: inherit">
+        <div class="header_left"><a  href="javascript:history.go(-1);"><i class="fa fa-angle-left left"></i></a></div>
+        <div class="header_title">选择城市</div>
+    </header>
+    <div class="no-margin-b">
+        <div class="cms-indexed-list" id="cms_indexed_list">
+            <div class="cms-indexed-list-search">
+                <input type="text" name="city" placeholder="请输入要查询的城市或拼音" autocapitalize="off">
+            </div>
+            <div class="cms-indexed-list-inner">
+                <ul class="table-view">
+                    <li class="table-view-divider"><i class="fa fa-map-marker" style="margin-right: 5px"></i>定位到的城市</li>
+                    <li class="table-view-cell" id="positionCity"><!--福州--></li>
+                    <li class="table-view-divider">热门城市</li>
+                    <li class="table-view-cell">福州</li>
+                    <li class="table-view-cell">厦门</li>
+                    <li class="table-view-cell">泉州</li>
+                    <li class="table-view-divider" data-group="C">C</li>
+                    <li class="table-view-cell" data-tags="changle">长乐</li>
+                    <li class="table-view-cell" data-tags="changtai">长泰</li>
+                    <li class="table-view-cell" data-tags="changtin">长汀</li>
+                    <li class="table-view-divider" data-group="D">D</li>
+                    <li class="table-view-cell" data-tags="datian">大田</li>
+                    <li class="table-view-cell" data-tags="dehua">德化</li>
+                    <li class="table-view-cell" data-tags="dongshan">东山</li>
+                    <li class="table-view-divider" data-group="F">F</li>
+                    <li class="table-view-cell" data-tags="fuzhou">福州</li>
+                    <li class="table-view-cell" data-tags="fuqing">福清</li>
+                    <li class="table-view-cell" data-tags="fuan">福安</li>
+                    <li class="table-view-cell" data-tags="fuding">福鼎</li>
+                    <li class="table-view-divider" data-group="G">G</li>
+                    <li class="table-view-cell" data-tags="光泽">光泽</li>
+                    <li class="table-view-cell" data-tags="gutian">古田</li>
+                    <li class="table-view-divider" data-group="H">H</li>
+                    <li class="table-view-cell" data-tags="huian">惠安</li>
+                    <li class="table-view-cell" data-tags="huaan">华安</li>
+                    <li class="table-view-divider" data-group="J">J</li>
+                    <li class="table-view-cell" data-tags="jiangle">将乐</li>
+                    <li class="table-view-cell" data-tags="jianning">建宁</li>
+                    <li class="table-view-cell" data-tags="jianou">建瓯</li>
+                    <li class="table-view-cell" data-tags="jianyang">建阳</li>
+                    <li class="table-view-cell" data-tags="jinjiang">晋江</li>
+                    <li class="table-view-cell" data-tags="jinmen">金门</li>
+                    <li class="table-view-divider" data-group="L">L</li>
+                    <li class="table-view-cell" data-tags="lianjiang">连江</li>
+                    <li class="table-view-cell" data-tags="liancheng">连城</li>
+                    <li class="table-view-cell" data-tags="luoyuan">罗源</li>
+                    <li class="table-view-cell" data-tags="longhai">龙海</li>
+                    <li class="table-view-cell" data-tags="longyan">龙岩</li>
+                    <li class="table-view-divider" data-group="M">M</li>
+                    <li class="table-view-cell" data-tags="minhou">闽侯</li>
+                    <li class="table-view-cell" data-tags="minqing">闽清</li>
+                    <li class="table-view-cell" data-tags="mingxi">明溪</li>
+                    <li class="table-view-divider" data-group="N">N</li>
+                    <li class="table-view-cell" data-tags="ninghua">宁化</li>
+                    <li class="table-view-cell" data-tags="ningde">宁德</li>
+                    <li class="table-view-cell" data-tags="nanping">南平</li>
+                    <li class="table-view-cell" data-tags="nanan">南安</li>
+                    <li class="table-view-cell" data-tags="nanjing">南靖</li>
+                    <li class="table-view-cell" data-tags="anxi">安溪</li>
+                    <li class="table-view-divider" data-group="P">P</li>
+                    <li class="table-view-cell" data-tags="pingtan">平潭</li>
+                    <li class="table-view-cell" data-tags="putian">莆田</li>
+                    <li class="table-view-cell" data-tags="pinghe">平和</li>
+                    <li class="table-view-cell" data-tags="pucheng">浦城</li>
+                    <li class="table-view-cell" data-tags="pingnan">屏南</li>
+                    <li class="table-view-divider" data-group="Q">Q</li>
+                    <li class="table-view-cell" data-tags="qingliu">清流</li>
+                    <li class="table-view-cell" data-tags="quanzhou">泉州</li>
+                    <li class="table-view-divider" data-group="S">S</li>
+                    <li class="table-view-cell" data-tags="sanming">三明</li>
+                    <li class="table-view-cell" data-tags="shaxian">沙县</li>
+                    <li class="table-view-cell" data-tags="shishi">石狮</li>
+                    <li class="table-view-cell" data-tags="shaowu">邵武</li>
+                    <li class="table-view-cell" data-tags="songxi">松溪</li>
+                    <li class="table-view-cell" data-tags="shanghang">上杭</li>
+                    <li class="table-view-cell" data-tags="shunchang">顺昌</li>
+                    <li class="table-view-cell" data-tags="shouning">寿宁</li>
+                    <li class="table-view-divider" data-group="T">T</li>
+                    <li class="table-view-cell" data-tags="taining">泰宁</li>
+                    <li class="table-view-divider" data-group="W">W</li>
+                    <li class="table-view-cell" data-tags="wuyishan">武夷山</li>
+                    <li class="table-view-cell" data-tags="wuping">武平</li>
+                    <li class="table-view-divider" data-group="X">X</li>
+                    <li class="table-view-cell" data-tags="xiamen">厦门</li>
+                    <li class="table-view-cell" data-tags="xianyou">仙游</li>
+                    <li class="table-view-cell" data-tags="xiapu">霞浦</li>
+                    <li class="table-view-divider" data-group="Y">Y</li>
+                    <li class="table-view-cell" data-tags="yongtai">永泰</li>
+                    <li class="table-view-cell" data-tags="yongan">永安</li>
+                    <li class="table-view-cell" data-tags="yongchun">永春</li>
+                    <li class="table-view-cell" data-tags="yongding">永定</li>
+                    <li class="table-view-cell" data-tags="youxi">尤溪</li>
+                    <li class="table-view-cell" data-tags="yunxiao">云霄</li>
+                    <li class="table-view-divider" data-group="Z">Z</li>
+                    <li class="table-view-cell" data-tags="zhangzhou">漳州</li>
+                    <li class="table-view-cell" data-tags="zhangping">漳平</li>
+                    <li class="table-view-cell" data-tags="zhaoan">诏安</li>
+                    <li class="table-view-cell" data-tags="zhangpu">漳浦</li>
+                    <li class="table-view-cell" data-tags="zhenghe">政和</li>
+                    <li class="table-view-cell" data-tags="zherong">柘荣</li>
+                    <li class="table-view-cell" data-tags="zhouning">周宁</li>
+                </ul>
+            </div>
+            <div class="cms-indexed-list-bar">
+                <a>A</a>
+                <a>B</a>
+                <a>C</a>
+                <a>D</a>
+                <a>E</a>
+                <a>F</a>
+                <a>G</a>
+                <a>H</a>
+                <a>I</a>
+                <a>J</a>
+                <a>K</a>
+                <a>L</a>
+                <a>M</a>
+                <a>N</a>
+                <a>O</a>
+                <a>P</a>
+                <a>Q</a>
+                <a>R</a>
+                <a>S</a>
+                <a>T</a>
+                <a>U</a>
+                <a>V</a>
+                <a>W</a>
+                <a>X</a>
+                <a>Y</a>
+                <a>Z</a>
+            </div>
+            <div class="cms-indexed-list-alert"></div>
+        </div>
+    </div>
+    <div class="javascript">
+        <script type="text/javascript" src="javascript/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $.ajax({
+                    url:"http://webapi.amap.com/maps?v=1.3&key=4b3f7a2b1dd15878125ef676556c715f",
+                    dataType:'jsonp',
+                    processData:false,
+                   // jsonp:'callback',
+                    type:'get',
+                    success:function(result) {
+                        function positionCity(){
+                            var mapObj = new AMap.Map('iCenter');
+                            //加载城市查询插件
+                            AMap.service(["AMap.CitySearch"], function() {
+                                //实例化城市查询类
+                                var citysearch = new AMap.CitySearch();
+                                //自动获取用户IP，返回当前城市
+                                citysearch.getLocalCity(function(status, result){
+                                    //当结果状态为"complete"且状态信息为"OK"时，解析服务返回结果
+                                    if(status === 'complete' && result.info === 'OK'){
+                                        if(result && result.city && result.bounds) {
+                                            var cityinfo = result.city;
+                                            var citybounds = result.bounds;
+                                            document.getElementById('positionCity').innerHTML = cityinfo.replace('市','');
+                                            //将地图移动到当前城市
+                                            mapObj.setBounds(citybounds);
+                                        }
+                                    }
+                                    //当结果状态为"complete"且状态信息为其他时，解析服务提示信息
+                                    else{
+                                        document.getElementById('positionCity').innerHTML = "定位失败";
+                                    }
+                                });
+                            });
+                        }
+                        positionCity();
+                        $('#cms_indexed_list').indexedlist();
+
+                        $('#cms_indexed_list .cms-indexed-list-inner .table-view-cell').on('click',function(){
+                            window.location.href='eActivity.html?city=福州';//可自行带参数
+                        })
+                    }
+                    //timeout:3000
+                });
+            })
+        </script>
+        <script src="javascript/jquery.indexedlist.js"></script>
+        <script src="javascript/common.js"></script>
+        <script>
+
+        </script>
+
+
+    </div>
+</div>
+</body>
+</html>

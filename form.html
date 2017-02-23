@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>活动APP-form</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="sdsd">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/weui_icon_font.css">
+    <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--<link rel="stylesheet" href="style/jquery-weui.css">-->
+  </head>
+  <body ontouchstart>
+  <div class="layout">
+  <header class="header_normal">
+      <div class="header_left"><a class="open-popup" href="javascript:;" data-target="#full"><i class="fa fa-map-marker"></i>福建</a></div>
+      <div class="header_title">发布预览</div>
+      <div class="header_right"><a class="p-color" href="javascript:;"> 编辑</a></div>
+  </header>
+
+  <div class="content">
+    <div class='demos-header'>
+      <h1 class="demos-title p-color">按钮</h1>
+    </div>
+      <div class="con">
+
+
+    <div class='demos-content-padded'>
+      <div class="button_group clearfix">
+          <a href="javascript:;" class="button btn_primary">确认</a>
+          <a href="javascript:;" class="button btn_disabled btn_primary">按钮</a>
+          <a href="javascript:;" class="button btn_warn">删除</a>
+          <a href="javascript:;" class="button btn_disabled btn_warn">删除</a>
+          <a href="javascript:;" class="button btn_default">加载更多</a>
+          <a href="javascript:;" class="button btn_small btn_default">加载更多</a>
+          <a href="javascript:;" class="button btn_small btn_normalhollow no-width">我要分享</a>
+          <a href="javascript:;" class="button btn_more">查看全部分享</a>
+          <a href="javascript:;" class="button btn_hide">隐藏其他设置<i class="up"></i></a>
+          <a href="javascript:;" class="button btn_hide">显示其他设置<i class="down"></i></a>
+      </div>
+    </div>
+
+    <h1 class="demos-title p-color">表单</h1>
+    <div class="cells">
+        <div class="cells_head">
+            <div class="cells_title">活动赞助</div>
+            <div class="cells_more">
+                <div class="switch">
+                    <input type="checkbox" id="zangzhu">
+                    <label for="zangzhu"></label>
+                </div>
+            </div>
+        </div>
+        <div class="cell cell_warn">
+            <div class="cell_title">收货人</div>
+            <div class="cell_primary"><input type="text" class="input_text" placeholder="必填"></div>
+        </div>
+        <div class="cell">
+            <div class="cell_title">需求描述</div>
+            <div class="cell_primary"><textarea class="textarea" placeholder="请输入描述" rows="4"></textarea></div>
+        </div>
+
+        <div class="cell">
+            <div class="cell_title">开始时间</div>
+            <div class="cell_primary"><input class="weui_input input_text" id="startTime" type="text" value="" placeholder="选择时间"> </div>
+        </div>
+        <div class="cell">
+            <div class="cell_title">结束时间</div>
+            <div class="cell_primary"><input class="weui_input input_text" id="endTime" type="text" value="" placeholder="选择时间"> </div>
+        </div>
+
+        <label for="check1" class="cell_other">
+            <div class="cell_other_button">
+                <input type="checkbox" class="weui_check" name="weui-select" id="check1" value="1" >
+                <span class="weui_icon_checked check_blue"></span>
+            </div>
+            <div class="cell_other_title">同意发布规则</div>
+        </label>
+        <label for="check2" class="cell_other">
+            <div class="cell_other_button">
+                <input type="checkbox" class="weui_check" name="weui-select" id="check2" value="1" >
+                <span class="weui_icon_checked"></span>
+            </div>
+            <div class="cell_other_title">同意发布规则</div>
+        </label>
+    </div>
+      <br>
+      <h1 class="demos-title p-color">列表</h1>
+      <div class="cells">
+          <div class="cells_head_1">
+              <div class="cells_title">
+                  <span>报名设置</span>
+              </div>
+              <div class="cells_more">
+                  <a href="javascript:;" class="button btn_small btn_normalhollow no-width">我要分享</a>
+              </div>
+          </div>
+          <div class="cell">
+              <div class="cell_primary">端午节是我国的传统节日，通过开展一系列具有传统文化内涵又体现时代特色的富有创意的趣味活动来吸引社区居民</div>
+          </div>
+          <div class="cell">
+              <div class="cell_title">所属专题</div>
+              <div class="cell_primary">选择专题</div>
+          </div>
+          <div class="cell">
+              <div class="cell_title">个人</div>
+              <div class="cell_primary">5000元</div>
+          </div>
+          <div class="cell">
+              <div class="cell_title">需求描述</div>
+              <div class="cell_primary">适合3至12岁小孩的读物100本；篮球、足
+                  球、羽毛球等体育用品20个；书包、文具盒
+                  或笔等学习用品30件。</div>
+          </div>
+          <div class="cell" href="javascript:;">
+              <div class="cell_title">个人赞助</div>
+              <div class="cell_primary">5000</div>
+              <div class="cell_ft_text">元</div>
+          </div>
+      </div>
+
+      <br><br>
+      <h1 class="demos-title p-color">弹出层 actionsheet</h1>
+
+      <div class="cells">
+          <a class="cell" href="javascript:;" id="show-actions">
+              <div class="cell_title">所属专题</div>
+              <div class="cell_primary">选择专题</div>
+              <div class="cell_ft_icon cell_ft_right"></div>
+          </a>
+          <a class="cell" href="javascript:;">
+              <div class="cell_title">所属专题</div>
+              <div class="cell_primary">选择专题</div>
+              <div class="cell_ft_icon cell_ft_down"></div>
+          </a>
+      </div>
+
+      <h1 class="demos-title p-color">弹出层 poupe</h1>
+      <div class="cells">
+          <a class="cell one_line open-popup" href="javascript:;" data-target="#full">
+              <div class="cell_title">参加组织</div>
+              <div class="cell_primary">福建省福州市街道军门社区福建省福州市街道军门社区</div>
+              <div class="cell_ft_icon cell_ft_right"></div>
+          </a>
+      </div>
+      <div class="cells">
+          <a class="cell one_line open-popup" href="javascript:;" data-target="#half">
+              <div class="cell_title">所属分类</div>
+              <div class="cell_primary">选择分类</div>
+              <div class="cell_ft_icon cell_ft_down"></div>
+          </a>
+      </div>
+      <h1 class="demos-title p-color">选择 picker</h1>
+      <div class="cells">
+          <a class="cell" href="javascript:;" >
+              <div class="cell_title">参加对象</div>
+              <div class="cell_primary">
+                  <input class="weui_input input_text" id="object" type="text" value="选择对象">
+              </div>
+              <div class="cell_ft_icon cell_ft_right"></div>
+          </a>
+      </div>
+    <br>
+      <h1 class="demos-title p-color">标签</h1>
+      <span class="label bg-secondary">已结束</span>
+      <span class="label bg-warning">进行中</span>
+      <span class="label bg-primary">筹备中</span>
+      <span class="label bg-error">报名中</span>
+        <br>
+      <br>
+      <span class="label bg-alert">请假</span>
+      <span class="label bg-success">已签退</span>
+      <span class="label bg-primary">已报名</span>
+      <br><br>
+
+      <h1 class="demos-title p-color">字体颜色</h1>
+      <span class="color-primary">报名成功</span>
+      <span class="color-success">请假</span>
+      <span class="color-warning">已签退</span>
+      <br><br>
+
+      <header class='demos-header'>
+          <h1 class="demos-title p-color">提示 toptip</h1>
+      </header>
+      <div class='button_group'>
+          <a href="javascript:;" id="show-success" class="button btn_primary">显示成功</a>
+          <a href="javascript:;" id="show-error" class="button btn_warn">操作失败</a>
+          <a href="javascript:;" id="show-warning" class="button btn_disabled btn_alert">警告</a>
+      </div>
+
+      <br><br>
+      <h1 class="demos-title p-color">提示 toast</h1>
+      <div class='button_group'>
+          <a href="javascript:;" id="show-toast" class="button btn_primary">显示 Toast 成功</a>
+          <a href="javascript:;" id="show-toast-cancel" class="button btn_warn">显示 Toast 取消</a>
+          <a href="javascript:;" id="show-toast-forbidden" class="button btn_warn">显示 Toast 禁止</a>
+          <a href="javascript:;" id="show-toast-text" class="button btn_primary">显示 Toast 纯文本</a>
+          <a href="javascript:;" id="show-loading" class="button btn_primary">显示 Loading</a>
+      </div>
+
+
+      <br><br>
+      <h1 class="demos-title p-color">对话框 dialog</h1>
+      <div class="button_group">
+          <a href="javascript:;" id="show-alert" class="button btn_alert">显示 Alert</a>
+          <a href="javascript:;" id="show-confirm" class="button btn_primary">显示 Confirm</a>
+          <a href="javascript:;" id="show-prompt" class="button btn_primary">显示 Prompt</a>
+          <a href="javascript:;" id="show-custom" class="button btn_primary">显示自定义对话框</a>
+      </div>
+
+      </div>
+  </div>
+      <div class="bottom">
+          <ul>
+              <li><a><i class="fa fa-file-text-o" ></i> <div>新闻</div></a></li>
+              <li class="active">
+                  <a>
+                  <span class="fa-stack stack-i">
+                      <i class="fa fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-start fa-stack-1x fa-inverse"></i>
+                  </span>
+                      <div>活动</div></a>
+              </li>
+              <li><a><i class="fa fa-edit"></i><div>学习</div></a></li>
+              <li><a><i class="fa fa-commenting-o"></i><div>交流</div></a></li>
+              <li><a><i class="fa fa-user"></i><div>我</div></a></li>
+          </ul>
+      </div>
+      <script src="javascript/jquery-2.1.4.min.js"></script>
+      <script src="javascript/jquery-weui.js"></script>
+      <script src="javascript/common.js"></script>
+      <!--时间picker-->
+      <script>
+
+      </script>
+      <!--单选picker-->
+      <script>
+          $("#object").select({
+              title: "选择对象",
+              items: [
+                  {
+                      title: "党员",
+                      value: "001"
+                  },
+                  {
+                      title: "群众",
+                      value: "002"
+                  },
+                  {
+                      title: "党委书记",
+                      value: "003"
+                  }
+              ]
+          });
+      </script>
+
+      <!--弹出actionsheet-->
+      <script>
+          $(document).on("click", "#show-actions", function() {
+              <!--弹出内容-->
+              $.actions({
+                  title: "选择专题",
+                  onClose: function() {
+                      console.log("close");
+                  },
+                  actions: [
+                      {
+                          text: "两学一做",
+                          className: "",
+                          onClick: function() {
+                              $.alert('选择了两学一做');
+                          }
+                      },
+                      {
+                          text: "党组织活动",
+                          className: "",
+                          onClick: function() {
+
+                          }
+                      },
+                      {
+                          text: "及时帮扶",
+                          className: '',
+                          onClick: function() {
+
+                          }
+                      }
+                  ]
+              });
+          });
+
+          $(document).on("click", "#show-actions-bg", function() {
+              $.actions({
+                  actions: [
+                      {
+                          text: "发布",
+                          className: "bg-primary"
+                      },
+                      {
+                          text: "编辑",
+                          className: "bg-warning"
+                      },
+                      {
+                          text: "删除",
+                          className: 'bg-danger'
+                      }
+                  ]
+              });
+          });
+      </script>
+
+      <!--poupe-->
+      <script>
+          $(document).on("open", ".weui-popup-modal", function() {
+              console.log("open popup");
+          }).on("close", ".weui-popup-modal", function() {
+              console.log("close popup");
+          });
+      </script>
+
+     <!-- 提示toptip-->
+      <script>
+          /*提示toptip*/
+          $(document)
+                  .on('click', '#show-success', function() {
+                      $.toptip('操作成功', 'success');
+                  })
+                  .on('click', '#show-error', function() {
+                      $.toptip('操作失败', 'error');
+                  })
+                  .on('click', '#show-warning', function() {
+                      $.toptip('警告', 'warning');
+                  })
+      </script>
+
+      <!--提示toast-->
+      <script>
+          /*提示toast*/
+          $(document).on("click", "#show-toast", function() {
+              $.toast("操作成功", function() {
+
+                  console.log('close');
+              });
+          })
+                  .on("click", "#show-toast-cancel", function() {
+                      $.toast("取消操作", "cancel", function(toast) {
+                          console.log(toast);
+                      });
+                  })
+                  .on("click", "#show-toast-forbidden", function() {
+                      $.toast("禁止操作", "forbidden");
+                  })
+                  .on("click", "#show-toast-text", function() {
+                      $.toast("纯文本1111", "text");
+                  })
+                  .on("click", "#show-loading", function() {
+                      $.showLoading();
+
+                      setTimeout(function() {
+                          $.hideLoading();
+                      }, 3000);
+                  });
+      </script>
+
+      <!--dialog-->
+      <script>
+          $(document).on("click", "#show-alert", function() {
+              $.alert("AlphaGo 就是天网的前身，人类要完蛋了！", "警告！");
+          });
+          $(document).on("click", "#show-confirm", function() {
+              $.confirm("您确定要删除文件吗?", "确认删除?", function() {
+                  $.toast("文件已经删除!");
+              }, function() {
+                  //取消操作
+              });
+          });
+          $(document).on("click", "#show-prompt", function() {
+              $.prompt("名字不能超过6个字符，不得出现不和谐文字", "输入姓名", function(text) {
+                  $.alert("您的名字是:"+text, "角色设定成功");
+              }, function() {
+                  //取消操作
+              });
+          });
+          $(document).on("click", "#show-custom", function() {
+              $.modal({
+                  title: "Hello",
+                  text: "我是自定义的modal",
+                  buttons: [
+                      { text: "支付宝", onClick: function(){ $.alert("你选择了支付宝"); } },
+                      { text: "微信支付", onClick: function(){ $.alert("你选择了微信支付"); } },
+                      { text: "取消", className: "default"},
+                  ]
+              });
+          });
+      </script>
+
+      <!--DATETIME-->
+      <script>
+          var start=$("#startTime").datetimePicker({
+              min: "2017-12-12",
+              max: "2022-12-12 12:12"
+              //onClose:function(){}
+          });
+          var end=$("#endTime").datetimePicker({
+              min: "2017-12-12",
+              max: "2020-12-12 12:12"
+          });
+
+          /*$(document).on("click", "#startTime", function() {
+              var endVal=$('#endTime').val();
+              if(endVal!=''){
+                  //start.max=endVal;
+                  $("#startTime").datetimePicker({
+                      min: "2012-12-12",
+                      max: endVal
+                  });
+              }
+          });
+          $(document).on("click", "#endTime", function() {
+              var startVal=$('#startTime').val();
+              if(startVal!=''){
+                  *//*start.min=startVal;*//*
+                  $("#endTime").picker("setValue",["2017", "12", "12","12","12"]);
+              }
+          });*/
+      </script>
+  </div>
+
+  <div id="full" class="weui-popup-container">
+      <div class="weui-popup-modal">
+          <!--弹出内容-->
+          <header class="demos-header">
+              <h2 class="demos-second-title">弹出 jQuery</h2>
+          </header>
+
+          <article class="weui_article">
+              <h1>大标题</h1>
+              <section>
+                  <h2 class="title">章标题</h2>
+                  <section>
+                      <h3>1.1 节标题</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                          consequat. Duis aute</p>
+                  </section>
+                  <section>
+                      <h3>1.2 节标题</h3>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </section>
+              </section>
+              <section>
+                  <a href="javascript:;" class="button btn_default close-popup">关闭</a>
+              </section>
+          </article>
+      </div>
+  </div>
+  <div id="half" class="weui-popup-container popup-bottom">
+      <div class="weui-popup-modal">
+          <!--弹出内容-->
+          <div class="toolbar">
+              <div class="toolbar-inner">
+                  <a href="javascript:;" class="picker-button close-popup">关闭</a>
+                  <h1 class="title">标题</h1>
+              </div>
+          </div>
+          <div class="modal-content">
+              <div class="weui_grids">
+                  <a href="javascript:;" class="weui_grid js_grid" data-id="dialog">
+                      <p class="weui_grid_label">
+                          发布
+                      </p>
+                  </a>
+                  <a href="javascript:;" class="weui_grid js_grid" data-id="progress">
+
+                      <p class="weui_grid_label">
+                          编辑
+                      </p>
+                  </a>
+                  <a href="javascript:;" class="weui_grid js_grid" data-id="msg">
+
+                      <p class="weui_grid_label">
+                          保存
+                      </p>
+                  </a>
+                  <a href="javascript:;" class="weui_grid js_grid" data-id="dialog">
+
+                      <p class="weui_grid_label">
+                          发布
+                      </p>
+                  </a>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>

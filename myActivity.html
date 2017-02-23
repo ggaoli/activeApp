@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>我的活动-活动APP</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta content="telephone=no" name="format-detection">
+        <link rel="stylesheet" href="style/layout.css"/>
+        <link rel="stylesheet" href="style/common.css"/>
+        <link href="style/index.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style/weui_icon_font.css"/>
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- 加载刷新-->
+        <link rel="stylesheet" href="style/pullToRefresh.css"/>
+        <!--fastclick-->
+        <script src="javascript/fastclick.js" type="text/javascript"></script>
+    </head>
+  <body ontouchstart>
+  <div class="layout">
+    <header class="header_normal">
+          <div class="header_left"><a  href="javascript:history.go(-1);"><i class="fa fa-angle-left left"></i></a></div>
+          <div class="header_title">我的活动</div>
+          <div class="header_right">
+              <a href="createActivity.html"> <i class="fa fa-plus"></i></a>
+              <a href="search_1.html"> <i class="fa fa-search"></i></a>
+          </div>
+    </header>
+    <div class="content">
+        <div class="navtab navtab2">
+            <div class="swiper-pagination">
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="list-data" >
+                            <div class="row" id="listData">
+                                <ul class="myAyctivity">
+                                    <!--<li class="cells activity_list">
+                                        <a class="cell on_line" href="#">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-alert">请假</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p1.png">
+                                                <div class="opacity">距开始还有：<span>10</span>个小时</div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-primary">报名成功</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p1.png">
+                                                <div class="opacity">距开始还有：<span>4</span>天</div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-primary">报名成功</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p2.png">
+                                                <div class="opacity_cover"><span>进行中</span></div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-alert">已签到</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p1.png">
+                                                <div class="opacity_cover"><span>进行中</span></div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-alert">已签到</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-success">已签退</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-success">已签退</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-success">已签退</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="list-data" >
+                            <div class="row" id="listData1">
+                                <ul class="myAyctivity">
+                                    <!--<li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-alert">请假</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p1.png">
+                                                <div class="opacity">距开始还有：<span>10</span>个小时</div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-primary">报名成功</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p1.png">
+                                                <div class="opacity">距开始还有：<span>4</span>天</div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-primary">报名成功</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p2.png">
+                                                <div class="opacity_cover"><span>进行中</span></div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-alert">已签到</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft">
+                                                <img src="images/p1.png">
+                                                <div class="opacity_cover"><span>进行中</span></div>
+                                            </div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-alert">已签到</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-success">已签退</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-success">已签退</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="cells activity_list">
+                                        <a class="cell on_line" href="detailActivity.html">
+                                            <div class="post_box fleft"><img src="images/p2.png"></div>
+                                            <div class="cell_primary">
+                                                <div class="active_title"><span class="label bg-success">已签退</span>福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div>
+                                                <div class="sec_info">
+                                                    <p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p>
+                                                    <p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p>
+                                                    <p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-scrollbar swiper-scrollbar2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+      <ul>
+          <li><a><i class="fa fa-file-text-o" ></i> <div>新闻</div></a></li>
+          <li class="active">
+              <a>
+              <span class="fa-stack stack-i">
+                  <i class="fa fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-start fa-stack-1x fa-inverse"></i>
+              </span>
+                  <div>活动</div></a>
+          </li>
+          <li><a><i class="fa fa-edit"></i><div>学习</div></a></li>
+          <li><a><i class="fa fa-commenting-o"></i><div>交流</div></a></li>
+          <li><a><i class="fa fa-user"></i><div>我</div></a></li>
+      </ul>
+  </div>
+      <script src="javascript/jquery-2.1.4.min.js"></script>
+      <script src="javascript/common.js"></script>
+      <script src="javascript/jquery-weui.js"></script>
+      <!-- tab-->
+      <script src="javascript/swiper.js"></script>
+      <!-- 加载刷新-->
+      <script src="javascript/iscroll4.js"></script>
+      <script src="javascript/pullToRefresh.js"></script>
+
+      <!--tab异步加载与刷新-->
+      <script>
+          $(function(){
+              //初始化iscroll 数据id:listData开头
+              //initListData();
+          });
+          $(window).resize(function() {
+              initListData();
+          });
+          function initListData(){
+              $("div[id^='listData']").each(function(){
+                  var _this=$(this);
+                  var _this_id=$(this).attr('id');
+                  $(this).css({
+                      'height':($('.content').height()-60)+'px'
+                  });
+                  var idn=eval(_this_id);
+                  //var idn=eval(id);
+                  idn.refresh();
+              });
+          }
+          //初始化iscroll
+          /*var a=refresher.init({
+              id:'listData',
+              pullDownAction:Refresh,
+              pullUpAction:Load
+          });*/
+          var b=refresher.init({
+              id:'listData1',
+              pullDownAction:Refresh,
+              pullUpAction:Load
+          });
+          //刷新
+          function Refresh(id) {
+              var idn=eval(id);
+              setTimeout(function () {
+                  //根据id选择加载相依数据
+                  /*if(id==''){}*/
+                  var el, li, i;
+                  el =document.querySelector("#"+id +" ul");
+                  document.getElementById(id).querySelector(".pullDownIcon").style.display="none";
+                  document.getElementById(id).querySelector(".pullDownLabel").innerHTML="<i class='fa fa-check-circle'></i>刷新成功";
+                  setTimeout(function () {
+                      if(id=='listData'){
+                          for (i=0; i<2; i++) {
+                              li=
+                                      '<li class="cells activity_list"> ' +
+                                      '<a class="cell on_line" href="detailActivity.html"> ' +
+                                      '<div class="post_box fleft">' +
+                                      '<img src="images/p1.png">' +
+                                      '</div> ' +
+                                      '<div class="cell_primary"> ' +
+                                      '<div class="active_title">' +
+                                      '<span class="label bg-primary">报名成功</span>最新数据福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div> ' +
+                                      '<div class="sec_info"> ' +
+                                      '<p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p> ' +
+                                      '<p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p> ' +
+                                      '<p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p> ' +
+                                      '</div> ' +
+                                      '</div> ' +
+                                      '</a> ' +
+                                      '</li>';
+                              $(el).prepend(li);
+                          }
+                          $.toptip('更新了2条活动', 'warning');
+                      }
+                      idn.refresh();
+                      $.toptip('你有新活动', 'warning');
+                      document.getElementById(id).querySelector(".pullDownLabel").innerHTML="";
+                  },1000);
+              }, 1000);
+          }
+
+          //继续加载
+          //listData:我参加的   listData1:我发布的
+          function Load(id){
+              var idn=eval(id);
+              setTimeout(function () {
+                  var el, li, i;
+                  el =document.querySelector("#"+id +" ul");
+
+                  //根据id选择加载相应的数据
+                  // listData:我参加的   listData1:我发布的
+                  if(id=='listData'){
+                      for (i=0; i<4; i++) {
+                          li=
+                              '<li class="cells activity_list"> ' +
+                              '<a class="cell on_line" href="detailActivity.html"> ' +
+                              '<div class="post_box fleft">' +
+                              '<img src="images/p2.png">' +
+                              '</div> ' +
+                              '<div class="cell_primary"> ' +
+                              '<div class="active_title">' +
+                              '<span class="label bg-alert">请假</span>我参加的福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div> ' +
+                              '<div class="sec_info"> ' +
+                              '<p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p> ' +
+                              '<p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p> ' +
+                              '<p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p> ' +
+                              '</div> ' +
+                              '</div> ' +
+                              '</a> ' +
+                              '</li>';
+                          $(el).append(li);
+                      }
+                  }
+                  //根据id选择加载相应的数据
+                  // listData:我参加的   listData1:我发布的
+                  if(id=='listData1'){
+                      for (i=0; i<4; i++) {
+                          li=
+                              '<li class="cells activity_list"> ' +
+                              '<a class="cell on_line" href="detailActivity.html"> ' +
+                              '<div class="post_box fleft">' +
+                              '<img src="images/p1.png">' +
+                              '</div> ' +
+                              '<div class="cell_primary"> ' +
+                              '<div class="active_title">' +
+                              '<span class="label bg-primary">报名成功</span>我发布的福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div> ' +
+                              '<div class="sec_info"> ' +
+                              '<p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p> ' +
+                              '<p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p> ' +
+                              '<p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p> ' +
+                              '</div> ' +
+                              '</div> ' +
+                              '</a> ' +
+                              '</li>';
+                          $(el).append(li);
+                      }
+                  }
+
+                  idn.refresh();
+              },2000);
+          }
+      </script>
+      <script>
+          var sx,sy,ex,ey,isp=false,i=0;
+          var swiper2 = new Swiper('.navtab2 .swiper-container', {
+              pagination: '.navtab2 .swiper-pagination',
+              paginationClickable: true,
+              paginationBulletRender: function (swiper,index, className) {
+                  var str=['我参加的','我发布的'];
+                  var width=100/str.length;
+                  return '<span class="' + className + '" style="width:'+width+'%">' + str[index]+ '</span>';
+              },
+              speed:400,
+              scrollbar:'.navtab2 .swiper-scrollbar',
+              scrollbarHide : false,
+              onlyExternal:false,
+              scrollbarDraggable:false,
+              threshold : 20,//必须拖动大于20px后slide才会开始移动
+              touchAngle : 30,
+              onTouchStart: function(swiper,event){
+                  if(event.type=='touchstart') {
+                      sx = event.targetTouches[0].clientX;
+                      sy = event.targetTouches[0].clientY;
+                  }
+              },
+              onTouchEnd: function(swiper,event){
+                  if(event.type=='touchsend') {
+                      ex = event.changedTouches[0].clientX;
+                      ey = event.changedTouches[0].clientY;
+                      var cx = Math.abs(sx - ex);
+                      var cy = Math.abs(sy - ey);
+                      if (cx == 0 && cy == 0) {
+                          /*点击事件*/
+                      } else {
+                          var a = Math.atan2(cy, cx);
+                          var ed = a * 180;
+                          if (isp) {
+                              event.stopPropagation();
+                          }
+                      }
+                      isp = false;
+                  }
+              },
+              onProgress: function(swiper, progress){
+                  i++;
+                  if(i>2){
+                      isp=true;
+                  }
+              },
+              onTransitionEnd:function(swiper){
+                  isp=false;
+              },
+              onInit: function(swiper){
+                  //Swiper初始化了
+                  // alert(swiper.activeIndex);//提示Swiper的当前索引
+                  var activeIndex=swiper.activeIndex;//活动块
+                  var activeSwiper=swiper.slides[activeIndex];
+                  $(activeSwiper).find('.pullUp').hide();
+                  $(activeSwiper).prepend('<div class="swiper-lazy-preloader"></div>');
+                  //异步加载数据
+                  /*$.ajax({
+                   异步加载代码
+                   });*/
+
+                  //模拟异步加载
+                  setTimeout(function(){
+                      var li='';
+                      /* if(activeIndex==0){
+                       判断activeIndex的值，选择加载的数据源
+                       }*/
+                      for (var i=0; i<9; i++) {
+                          li+=
+                                  '<li class="cells activity_list"> ' +
+                                  '<a class="cell on_line" href="detailActivity.html"> ' +
+                                  '<div class="post_box fleft">' +
+                                  '<img src="images/p1.png">' +
+                                  '</div> ' +
+                                  '<div class="cell_primary"> ' +
+                                  '<div class="active_title">' +
+                                  '<span class="label bg-primary">报名成功</span>最新数据福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div> ' +
+                                  '<div class="sec_info"> ' +
+                                  '<p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p> ' +
+                                  '<p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p> ' +
+                                  '<p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p> ' +
+                                  '</div> ' +
+                                  '</div> ' +
+                                  '</a> ' +
+                                  '</li>';
+                      }
+                      $(activeSwiper).find('.swiper-lazy-preloader').remove();
+                      $(activeSwiper).find('ul').append(li);
+                      $(activeSwiper).find('.pullUp').show();
+                      //初始化scroller区域
+                      var a=refresher.init({
+                          id:'listData',
+                          pullDownAction:Refresh,
+                          pullUpAction:Load
+                      });
+                      initListData();
+                  },1000);
+              },/*展示区初始化*/
+
+              onSlideChangeStart: function(swiper){
+                  var activeIndex=swiper.activeIndex;//活动块
+                  var activeSwiper=swiper.slides[activeIndex];
+                  if($(activeSwiper).find('li').length==0){//数据未加载
+                      $(activeSwiper).find('.pullUp').hide();
+                      $(activeSwiper).find('.swiper-lazy-preloader').remove();
+                      $(activeSwiper).prepend('<div class="swiper-lazy-preloader"></div>');
+                      //异步加载数据
+                      /*$.ajax({
+                       异步加载代码
+                       });*/
+
+                      //模拟异步加载
+                      setTimeout(function(){
+                          var li='';
+                          /* if(activeIndex==0){
+                           判断activeIndex的值，选择加载的数据源
+                           }*/
+                          for (var i=0; i<9; i++) {
+                              li+=
+                                      '<li class="cells activity_list"> ' +
+                                      '<a class="cell on_line" href="detailActivity.html"> ' +
+                                      '<div class="post_box fleft">' +
+                                      '<img src="images/p1.png">' +
+                                      '</div> ' +
+                                      '<div class="cell_primary"> ' +
+                                      '<div class="active_title">' +
+                                      '<span class="label bg-primary">报名成功</span>最新数据福建省福州市鼓楼区军门社区开展为灾区小学送小书包助学活动</div> ' +
+                                      '<div class="sec_info"> ' +
+                                      '<p class="time"><i class="fa fa-clock-o"></i><span>2016/06/16 12:00 ~ 09/09 14:00</span></p> ' +
+                                      '<p class="add"><i class="fa fa-map-marker"></i><span>福建省福州市鼓楼区东街街道军门社区</span></p> ' +
+                                      '<p class="p_num"><i class="fa fa-user"></i><span>163/200人</span></p> ' +
+                                      '</div> ' +
+                                      '</div> ' +
+                                      '</a> ' +
+                                      '</li>';
+                          }
+                          $(activeSwiper).find('.swiper-lazy-preloader').remove();
+                          $(activeSwiper).find('ul').append(li);
+                          $(activeSwiper).find('.pullUp').show();
+                          //初始化scroller区域
+
+                          initListData();
+                      },1000);
+                  }
+              }
+          });
+      </script>
+  </div>
+  </body>
+</html>

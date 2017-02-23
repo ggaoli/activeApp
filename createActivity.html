@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>活动APP-创建活动01</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="apple-mobile-web-app-title" content="">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta content="telephone=no" name="format-detection">
+        <link rel="stylesheet" href="style/layout.css"/>
+        <link rel="stylesheet" href="style/common.css"/>
+        <link rel="stylesheet" href="style/index.css"/>
+        <link rel="stylesheet" href="style/weui_icon_font.css"/>
+        <link href="style/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="style/iconfont.css" rel="stylesheet" type="text/css">
+        <!--地区选择-->
+        <link rel="stylesheet" href="style/cmsApp.css"/>
+        <!--地图组件-->
+        <link rel="stylesheet" href="style/map.css" type="text/css">
+        <!--人员,组织选择-->
+        <link rel="stylesheet" href="style/peopleselect.css"/>
+        <link rel="stylesheet" href="style/orgSelect.css"/>
+        <!--标签选择-->
+        <link rel="stylesheet" href="style/select2.css"/>
+        <!--时间选择-->
+        <link rel="stylesheet" href="style/mobiscroll.css">
+        <link rel="stylesheet" href="style/mobiscrollDateTime.css">
+        <!--fastclick-->
+        <!--<script src="javascript/fastclick.js" type="text/javascript"></script>-->
+        <style>
+            .amap-logo {
+                right: 0 !important;
+                left: auto !important;
+                display: none;
+            }
+            /*去掉logo*/
+
+        </style>
+    </head>
+
+<body ontouchstart>
+
+    <div class="layout">
+        <header class="header_normal">
+          <!--<div class="header_left">
+              <a  href="javascript:history.go(-1);">
+                 &lt;!&ndash; <i class="iconfont icon-arrow-left"></i>&ndash;&gt;
+                  <i class="fa fa-angle-left"></i>
+              </a>
+          </div>-->
+            <div class="header_left"><a href="javascript:history.go(-1);"><i class="fa fa-angle-left left"></i></a></div>
+          <div class="header_title">创建活动</div>
+        </header>
+        <div class="content">
+          <div class="ui-mobile-viewport">
+              <div data-role="page" id="page1" class="ui-page">
+                  <div class="content-padding">
+                      <div class="three_step clearfix">
+                          <div class="act_step active">
+                              <div class="step_line"></div>
+                              <div class="step_icon_box">
+                                  <div class="icon"><i class="iconfont icon-baoming"></i></div>
+                              </div>
+                              <div class="step_info_box">
+                                  <span>活动详情</span>
+                              </div>
+                          </div>
+                          <div class="act_step">
+                              <div class="step_line"></div>
+                              <div class="step_icon_box">
+                                  <div class="icon"><i class="fa fa-credit-card fa-stack-3x"></i></div>
+                              </div>
+                              <div class="step_info_box">
+                                  <span>报名设置</span>
+                              </div>
+                          </div>
+                          <div class="act_step">
+                              <div class="step_icon_box">
+                                  <div class="icon"><i class="fa fa-th-large"></i></div>
+                              </div>
+                              <div class="step_info_box">
+                                  <span>扩展选项</span>
+                              </div>
+                          </div>
+                      </div>
+                      <a class="post" id="post" href="post_tabandcrop.html">
+                          <div class="post-img click-block" >
+                              <img src="images/post_bg.jpg" alt="">
+                          </div>
+                          <div class="post_upload"><i class="icon_upload"></i><!--<img src="images/post_upload.png">--></div>
+                      </a>
+                      <div class="cells">
+                          <div class="cell">
+                              <div class="cell_title">活动名称</div>
+                              <div class="cell_primary"><input type="text" class="input_text" autocapitalize="off" placeholder="输入名称"></div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <a class="cell open-popup" data-target="#full">
+                              <div class="cell_title">活动地区</div>
+                              <div class="cell_primary"><input type="text" class="input_text" placeholder="选择地区" id="area" readonly ></div>
+                          </a>
+                      </div>
+                      <div class="cells">
+                          <a class="cell one_line open-popup" data-target="#addre_active" id="openMap">
+                              <div class="cell_title">活动地址</div>
+                              <div class="cell_primary"><input type="text" class="input_text" id="address" placeholder="选择地址" readonly><input type="hidden" class="input_text" id="lnglatXY"></div>
+                              <div class="cell_ft_text"><i class="fa fa-map-marker"></i></div>
+                          </a>
+                      </div>
+                      <div class="cells">
+                          <label class="cell" for="sDateTime">
+                              <div class="cell_title">开始时间</div>
+                              <div class="cell_primary">
+                                  <input class="weui_input input_text" id="sDateTime" readonly="readonly" type="text" value="" placeholder="选择时间" autocapitalize="off">
+                              </div>
+                          </label>
+                          <label class="cell" for="eDateTime">
+                              <div class="cell_title">结束时间</div>
+                              <div class="cell_primary">
+                                  <input class="weui_input input_text" id="eDateTime"  type="text" value="" placeholder="选择时间" autocapitalize="off">
+                              </div>
+                          </label>
+                      </div>
+                      <div class="cells">
+                          <div class="cell">
+                              <div class="cell_title">活动时长</div>
+                              <div class="cell_primary"><input type="number" class="input_text" autocapitalize="off" id="Ahours" placeholder="输入时长"></div>
+                              <div class="cell_ft_text">小时</div>
+                          </div>
+                      </div>
+                      <div class="cells one_line " >
+                          <a class="cell open-popup" href="javaScript:void(0);" data-target="#select_zhuanti">
+                              <div class="cell_title">所属专题</div>
+                              <div class="cell_primary special-input-sel-box">
+                                  <input type="text" class="input_text" placeholder="选择专题" readonly>
+                              </div>
+                              <div class="cell_ft_icon cell_ft_right"></div>
+                          </a>
+                      </div>
+                      <div class="cells">
+                          <a class="cell one_line open-popup" href="javascript:void(0);" data-target="#select_fenlei"><!--id="fenlei_open"--><!--data-target="#select_fenlei"-->
+                              <div class="cell_title">所属分类</div>
+                              <div class="cell_primary ">
+                                 <!-- <select   class="input_text" id="select1" placeholder="选择分类" value=" ">
+                                      <option value="">请选择</option>
+                                      <option value="活动">活动</option>
+                                      <option value="主办方">主办方</option>
+                                  </select>-->
+                                  <input type="text" class="input_text" placeholder="选择分类" id="fenlei" readonly>
+                              </div>
+                              <div class="cell_ft_icon cell_ft_down"></div>
+                          </a>
+                      </div>
+                      <div class="cells">
+                          <a class="cell  open-popup" href="javascript:void(0);" data-target="#select_tag" >
+                              <div class="cell_title">活动标签</div>
+                              <div class="cell_primary">
+                                  <div class="tag-input">
+                                      <ul>
+                                          <div class="inputtip">添加标签</div>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <!--<div class="cell_ft_icon cell_ft_down"></div>-->
+                          </a>
+                      </div>
+                      <div class="cells">
+                          <div class="cell">
+                              <div class="cell_title">开展依据</div>
+                              <div class="cell_primary"><textarea class="textarea" rows="4" autocapitalize="off" placeholder="填写依据"></textarea></div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <a class="cell open-popup" href="javascript:void(0);" data-target="#active_plan" id="open_active_plan">
+                              <div class="cell_title">活动方案</div>
+                              <div class="cell_primary">
+                                  <textarea class="textarea" rows="4" readonly placeholder="填写方案"></textarea>
+                              </div>
+                          </a>
+                      </div>
+                      <div class="button_group">
+                        <a  class="button btn_primary page_button" data-transition="slide" id="step2">下一步</a>
+                          <!--下一步之前的表单验证事件在 #step1-->
+                      </div>
+                  </div>
+              </div>
+
+              <div data-role="page" id="page2" class="ui-page">
+                <div class="content-padding">
+                    <div class="three_step clearfix">
+                        <div class="act_step active ">
+                            <div class="step_line"></div>
+                            <div class="step_icon_box page_button" data-direction="reverse" href="#page1">
+                                <div class="icon"><i class="fa fa-align-right"></i></div>
+                            </div>
+                            <div class="step_info_box">
+                                <span>活动详情</span>
+                            </div>
+                        </div>
+                        <div class="act_step active">
+                            <div class="step_line"></div>
+                            <div class="step_icon_box">
+                                <div class="icon"><i class="fa fa-credit-card fa-stack-3x"></i></div>
+                            </div>
+                            <div class="step_info_box">
+                                <span>报名设置</span>
+                            </div>
+                        </div>
+                        <div class="act_step">
+                            <div class="step_icon_box">
+                                <div class="icon"><i class="fa fa-th-large"></i></div>
+                            </div>
+                            <div class="step_info_box">
+                                <span>扩展选项</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cells">
+                        <label class="cell" for="sDateTime1">
+                            <div class="cell_title">报名开始</div>
+                            <div class="cell_primary">
+                                <input class="weui_input input_text" id="sDateTime1" readonly="readonly" type="text" value="" placeholder="选择时间" autocapitalize="off">
+                            </div>
+                        </label>
+                        <label class="cell" for="eDateTime1">
+                            <div class="cell_title">报名结束</div>
+                            <div class="cell_primary">
+                                <input class="weui_input input_text" id="eDateTime1" readonly="readonly" type="text" value="" placeholder="选择时间" autocapitalize="off">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="cells">
+                        <div class="cell">
+                            <div class="cell_title">报名上限</div>
+                            <div class="cell_primary"><input  class="input_text" placeholder="不限人数" value="" type="number" autocapitalize="off"></div>
+                            <div class="cell_ft_text">人</div>
+                        </div>
+                    </div>
+                    <div class="cells">
+                        <a class="cell one_line open-popup" href="javascript:void (0);" data-target="#peopleS" id="peopleselect" reveal-model-id="peopleS">
+                            <div class="cell_title">参加对象</div>
+                            <div class="cell_primary">
+                                <div class="search-class part-peo_selected clearfix">
+                                    <ul>
+                                        <div class="inputtip">选择人员</div>
+                                    </ul>
+                                </div>
+                                <input type="hidden" id="orgCode" name="orgCode" value="C59F19P19S01T01U1BV09"/>
+                            </div>
+                            <div class="cell_ft_icon cell_ft_right "></div>
+                        </a>
+                    </div>
+                    <div class="cells">
+                        <a class="cell one_line open-popup" href="javascript:void (0);" data-target="#zuzhiS" id="orgselect" reveal-model-id="zuzhiS">
+                            <div class="cell_title l32">参加组织</div>
+                            <div class="cell_primary">
+                                <div class="searchOrg searchOrg_input">
+                                    <ul class="clearfix" id="orgId">
+                                        <div class="inputtip">选择组织</div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cell_ft_icon cell_ft_right l32"></div>
+                        </a>
+                    </div>
+                    <div class="cells">
+                        <div class="cell one_line open-popup" href="javascript:void (0);" data-target="#select_host">
+                            <div class="cell_title">主办方</div>
+                            <div class="cell_primary">
+                                <input type="text" class="input_text" id="host" placeholder="选择主办方" value="" autocapitalize="off" readonly>
+                            </div>
+                            <div class="cell_ft_icon cell_ft_down"></div>
+                        </div>
+                        <div class="cell">
+                            <div class="cell_title">联系人</div>
+                            <div class="cell_primary"><input type="text" class="input_text" value="" autocapitalize="off" placeholder="填写联系人"></div>
+                        </div>
+                        <div class="cell">
+                            <div class="cell_title">联系电话</div>
+                            <div class="cell_primary"><input type="number" class="input_text" autocapitalize="off" placeholder="填写联系电话"></div>
+                        </div>
+                    </div>
+                    <div class="tow_button button_group clearfix">
+                        <div class="tow">
+                            <a href="#page1" class="button btn_primary page_button fleft" data-transition="slide" data-direction="reverse" id="step2_1">上一步</a>
+                        </div>
+                        <div class="tow">
+                            <a  class="button btn_primary page_button fright" data-transition="slide" id="step3">下一步</a>
+                        </div>
+                        <!--下一步之前的表单验证事件在 #step1-->
+                    </div>
+                </div>
+              </div>
+
+              <div data-role="page" id="page3" class="ui-page">
+                  <div class="content-padding">
+                      <div class="three_step clearfix">
+                          <div class="act_step active">
+                              <div class="step_line"></div>
+                              <div class="step_icon_box">
+                                  <div class="icon"><i class="fa fa-align-right"></i></div>
+                              </div>
+                              <div class="step_info_box">
+                                  <span>活动详情</span>
+                              </div>
+                          </div>
+                          <div class="act_step active">
+                              <div class="step_line"></div>
+                              <div class="step_icon_box page_button" data-direction="reverse" href="#page2">
+                                  <div class="icon"><i class="fa fa-credit-card fa-stack-3x"></i></div>
+                              </div>
+                              <div class="step_info_box">
+                                  <span>报名设置</span>
+                              </div>
+                          </div>
+                          <div class="act_step active">
+                              <div class="step_icon_box">
+                                  <div class="icon"><i class="fa fa-th-large"></i></div>
+                              </div>
+                              <div class="step_info_box">
+                                  <span>扩展选项</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <div class="cell">
+                              <div class="cell_title">经费预算</div>
+                              <div class="cell_primary"><input type="number" class="input_text" placeholder="非必填" value="" autocapitalize="off"></div>
+                              <div class="cell_ft_text">元</div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <div class="cells_head">
+                              <div class="cells_title">活动赞助</div>
+                              <div class="cells_more">
+                                  <div class="switch">
+                                      <input type="checkbox" checked="checked" id="zangzhu">
+                                      <label for="zangzhu" ></label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div id="sponsor-radio">
+                             <!-- 活动赞助显示隐藏id-->
+                              <div class="cell">
+                                  <div class="cell_title">个人上限</div>
+                                  <div class="cell_primary"><input type="number" class="input_text" placeholder="非必填" value="" autocapitalize="off"></div>
+                                  <div class="cell_ft_text">元</div>
+                              </div>
+                              <div class="cell">
+                                  <div class="cell_title">总额度</div>
+                                  <div class="cell_primary"><input type="number" class="input_text" placeholder="非必填" value="" autocapitalize="off"></div>
+                                  <div class="cell_ft_text">元</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <div class="cells_head">
+                              <div class="cells_title">物资捐赠</div>
+                              <div class="cells_more">
+                                  <div class="switch">
+                                      <input type="checkbox" id="juanzen" checked="checked"/>
+                                      <label for="juanzen"></label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div id="donation-radio">
+                              <!-- 物资捐赠显示隐藏id-->
+                              <div class="cell">
+                                  <div class="cell_title">需求描述</div>
+                                  <div class="cell_primary"><textarea class="textarea"  rows="4" placeholder="填写需求描述"></textarea></div>
+                              </div>
+                              <div class="cell">
+                                  <div class="cell_title">收货人</div>
+                                  <div class="cell_primary"><input type="text" class="input_text" autocapitalize="off" placeholder="填写收货人"></div>
+                              </div>
+                              <div class="cell">
+                                  <div class="cell_title">收货地址</div>
+                                  <div class="cell_primary"><input type="text" class="input_text" autocapitalize="off" placeholder="填写需求描述"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <div for="check2"  class="cell_other">
+                              <label class="cell_other_button" for="check2">
+                                  <input type="checkbox" class="weui_check"  id="check2" />
+                                  <span class="weui_icon_checked check_blue"></span>
+                              </label>
+                              <div class="cell_other_title"><label for="check2">签到</label></div>
+
+                              <label class="cell_other_button" for="check3">
+                                  <input type="checkbox" class="weui_check"  id="check3" />
+                                  <span class="weui_icon_checked check_blue"></span>
+                              </label>
+                              <div class="cell_other_title"><label for="check3">隐私</label></div>
+                          </div>
+                      </div>
+                      <div class="cells">
+                          <label for="check1"  class="cell_other">
+                              <div class="cell_other_button" for="check1">
+                                  <input type="checkbox" class="weui_check"  id="check1" />
+                                  <span class="weui_icon_checked check_blue"></span>
+                              </div>
+                              <div class="cell_other_title"><label for="check1">上级审批</label></div>
+                          </label>
+                      </div>
+                      <div class="tow_button button_group clearfix">
+                          <div class="tow">
+                              <a href="#page2" class="button btn_primary page_button fleft" data-transition="slide" data-direction="reverse" id="step3_2">上一步</a>
+                          </div>
+                          <div class="tow">
+                              <a class="button btn_primary fright" id="save">保存草稿并预览</a>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+        <!--<div class="bottom">
+          <ul>
+              <li><a><i class="fa fa-file-text-o" ></i> <div>新闻</div></a></li>
+              <li class="active">
+                  <a>
+                  <span class="fa-stack stack-i">
+                      <i class="fa fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-start fa-stack-1x fa-inverse"></i>
+                  </span>
+                      <div>活动</div></a>
+              </li>
+              <li><a><i class="fa fa-edit"></i><div>学习</div></a></li>
+              <li><a><i class="fa fa-commenting-o"></i><div>交流</div></a></li>
+              <li><a><i class="fa fa-user"></i><div>我</div></a></li>
+          </ul>
+        </div>-->
+        <div class="popup">
+            <div id="full" class="weui-popup-container">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <header class="header_normal popup_header" style="position:static">
+                        <div class="header_left"><a   class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">选择地区</div>
+                    </header>
+                    <div class="no-margin-b">
+                        <div class="cms-indexed-list" id="cms_indexed_list">
+                            <div class="cms-indexed-list-search">
+                                <input type="text" name="city" placeholder="请输入要查询的城市或拼音" autocapitalize="off">
+                            </div>
+                            <div class="cms-indexed-list-inner">
+                                <ul class="table-view">
+                                    <li class="table-view-divider"><i class="fa fa-map-marker" style="margin-right: 5px"></i>定位到的城市</li>
+                                    <li class="table-view-cell" id="positionCity">福州</li>
+                                    <li class="table-view-divider">热门城市</li>
+                                    <li class="table-view-cell">福州</li>
+                                    <li class="table-view-cell">厦门</li>
+                                    <li class="table-view-cell">泉州</li>
+                                    <li class="table-view-divider" data-group="C">C</li>
+                                    <li class="table-view-cell" data-tags="changle">长乐</li>
+                                    <li class="table-view-cell" data-tags="changtai">长泰</li>
+                                    <li class="table-view-cell" data-tags="changtin">长汀</li>
+                                    <li class="table-view-divider" data-group="D">D</li>
+                                    <li class="table-view-cell" data-tags="datian">大田</li>
+                                    <li class="table-view-cell" data-tags="dehua">德化</li>
+                                    <li class="table-view-cell" data-tags="dongshan">东山</li>
+                                    <li class="table-view-divider" data-group="F">F</li>
+                                    <li class="table-view-cell" data-tags="fuzhou">福州</li>
+                                    <li class="table-view-cell" data-tags="fuqing">福清</li>
+                                    <li class="table-view-cell" data-tags="fuan">福安</li>
+                                    <li class="table-view-cell" data-tags="fuding">福鼎</li>
+                                    <li class="table-view-divider" data-group="G">G</li>
+                                    <li class="table-view-cell" data-tags="光泽">光泽</li>
+                                    <li class="table-view-cell" data-tags="gutian">古田</li>
+                                    <li class="table-view-divider" data-group="H">H</li>
+                                    <li class="table-view-cell" data-tags="huian">惠安</li>
+                                    <li class="table-view-cell" data-tags="huaan">华安</li>
+                                    <li class="table-view-divider" data-group="J">J</li>
+                                    <li class="table-view-cell" data-tags="jiangle">将乐</li>
+                                    <li class="table-view-cell" data-tags="jianning">建宁</li>
+                                    <li class="table-view-cell" data-tags="jianou">建瓯</li>
+                                    <li class="table-view-cell" data-tags="jianyang">建阳</li>
+                                    <li class="table-view-cell" data-tags="jinjiang">晋江</li>
+                                    <li class="table-view-cell" data-tags="jinmen">金门</li>
+                                    <li class="table-view-divider" data-group="L">L</li>
+                                    <li class="table-view-cell" data-tags="lianjiang">连江</li>
+                                    <li class="table-view-cell" data-tags="liancheng">连城</li>
+                                    <li class="table-view-cell" data-tags="luoyuan">罗源</li>
+                                    <li class="table-view-cell" data-tags="longhai">龙海</li>
+                                    <li class="table-view-cell" data-tags="longyan">龙岩</li>
+                                    <li class="table-view-divider" data-group="M">M</li>
+                                    <li class="table-view-cell" data-tags="minhou">闽侯</li>
+                                    <li class="table-view-cell" data-tags="minqing">闽清</li>
+                                    <li class="table-view-cell" data-tags="mingxi">明溪</li>
+                                    <li class="table-view-divider" data-group="N">N</li>
+                                    <li class="table-view-cell" data-tags="ninghua">宁化</li>
+                                    <li class="table-view-cell" data-tags="ningde">宁德</li>
+                                    <li class="table-view-cell" data-tags="nanping">南平</li>
+                                    <li class="table-view-cell" data-tags="nanan">南安</li>
+                                    <li class="table-view-cell" data-tags="nanjing">南靖</li>
+                                    <li class="table-view-cell" data-tags="anxi">安溪</li>
+                                    <li class="table-view-divider" data-group="P">P</li>
+                                    <li class="table-view-cell" data-tags="pingtan">平潭</li>
+                                    <li class="table-view-cell" data-tags="putian">莆田</li>
+                                    <li class="table-view-cell" data-tags="pinghe">平和</li>
+                                    <li class="table-view-cell" data-tags="pucheng">浦城</li>
+                                    <li class="table-view-cell" data-tags="pingnan">屏南</li>
+                                    <li class="table-view-divider" data-group="Q">Q</li>
+                                    <li class="table-view-cell" data-tags="qingliu">清流</li>
+                                    <li class="table-view-cell" data-tags="quanzhou">泉州</li>
+                                    <li class="table-view-divider" data-group="S">S</li>
+                                    <li class="table-view-cell" data-tags="sanming">三明</li>
+                                    <li class="table-view-cell" data-tags="shaxian">沙县</li>
+                                    <li class="table-view-cell" data-tags="shishi">石狮</li>
+                                    <li class="table-view-cell" data-tags="shaowu">邵武</li>
+                                    <li class="table-view-cell" data-tags="songxi">松溪</li>
+                                    <li class="table-view-cell" data-tags="shanghang">上杭</li>
+                                    <li class="table-view-cell" data-tags="shunchang">顺昌</li>
+                                    <li class="table-view-cell" data-tags="shouning">寿宁</li>
+                                    <li class="table-view-divider" data-group="T">T</li>
+                                    <li class="table-view-cell" data-tags="taining">泰宁</li>
+                                    <li class="table-view-divider" data-group="W">W</li>
+                                    <li class="table-view-cell" data-tags="wuyishan">武夷山</li>
+                                    <li class="table-view-cell" data-tags="wuping">武平</li>
+                                    <li class="table-view-divider" data-group="X">X</li>
+                                    <li class="table-view-cell" data-tags="xiamen">厦门</li>
+                                    <li class="table-view-cell" data-tags="xianyou">仙游</li>
+                                    <li class="table-view-cell" data-tags="xiapu">霞浦</li>
+                                    <li class="table-view-divider" data-group="Y">Y</li>
+                                    <li class="table-view-cell" data-tags="yongtai">永泰</li>
+                                    <li class="table-view-cell" data-tags="yongan">永安</li>
+                                    <li class="table-view-cell" data-tags="yongchun">永春</li>
+                                    <li class="table-view-cell" data-tags="yongding">永定</li>
+                                    <li class="table-view-cell" data-tags="youxi">尤溪</li>
+                                    <li class="table-view-cell" data-tags="yunxiao">云霄</li>
+                                    <li class="table-view-divider" data-group="Z">Z</li>
+                                    <li class="table-view-cell" data-tags="zhangzhou">漳州</li>
+                                    <li class="table-view-cell" data-tags="zhangping">漳平</li>
+                                    <li class="table-view-cell" data-tags="zhaoan">诏安</li>
+                                    <li class="table-view-cell" data-tags="zhangpu">漳浦</li>
+                                    <li class="table-view-cell" data-tags="zhenghe">政和</li>
+                                    <li class="table-view-cell" data-tags="zherong">柘荣</li>
+                                    <li class="table-view-cell" data-tags="zhouning">周宁</li>
+                                </ul>
+                            </div>
+                            <div class="cms-indexed-list-bar">
+                                <a>A</a>
+                                <a>B</a>
+                                <a>C</a>
+                                <a>D</a>
+                                <a>E</a>
+                                <a>F</a>
+                                <a>G</a>
+                                <a>H</a>
+                                <a>I</a>
+                                <a>J</a>
+                                <a>K</a>
+                                <a>L</a>
+                                <a>M</a>
+                                <a>N</a>
+                                <a>O</a>
+                                <a>P</a>
+                                <a>Q</a>
+                                <a>R</a>
+                                <a>S</a>
+                                <a>T</a>
+                                <a>U</a>
+                                <a>V</a>
+                                <a>W</a>
+                                <a>X</a>
+                                <a>Y</a>
+                                <a>Z</a>
+                            </div>
+                            <div class="cms-indexed-list-alert"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="zuzhiS" class="weui-popup-container">
+                <div class="weui-popup-modal org"><!--必须org-->
+                    <!--弹出内容-->
+                    <header class="header_normal popup_header">
+                        <div class="header_left"><a   class="close-reveal-modal close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">选择组织</div>
+                        <div class="header_right">
+                            <a href="javascript:void (0);" class="sure close-reveal-modal close-popup p-color" shape="rect" aria-label="Close">提交</a>
+                        </div>
+                    </header>
+                    <div class="no-margin-b orgSelect popup_content" id="orgBox">
+                        <div class="modal_wrap padding-t10">
+                            <div class="oselect_hd">
+                                <div class="infs">
+                                    <div class="right btn_small_group">
+                                        <a class="button btn_small btn_normalhollow no-width look-more  right btn_disabled" title="展开"><i class="fa fa-plus"></i>展开</a>
+                                        </div>
+                                    <span class="font-gray">已邀请组织(<em class="orgnum">0</em>)</span>
+                                </div>
+                                <div class="h-selected" orgid="orgSelect">
+                                    <ul class="clearfix">
+                                    </ul>
+                                </div>
+                                <div class="infs1">
+                                    <span class="font-gray">按机构筛选</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="no-seclect">
+                                    <ul style="zoom:1;" class="org-0" grid="org-0"></ul>
+                                </div>
+                                <input type="hidden" name="participatingOrg" />
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div id="peopleS" class="weui-popup-container">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <header class="header_normal popup_header">
+                        <div class="header_left"><a   class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">选择人员</div>
+                        <div class="header_right">
+                            <a href="javascript:void (0);" class="sure close-reveal-modal close-popup p-color">提交</a>
+                        </div>
+                    </header>
+                    <div class="no-margin-b people  peopleSelect popup_content" id="peopleBox">
+                        <div class="modal_wrap">
+                            <div class="pselect_hd">
+                                <div class="infs">
+                                    <div class="right btn_small_group">
+                                        <a class="button btn_small btn_normalhollow no-width look-more  right btn_disabled" title="展开"><i class="fa fa-plus"></i>展开</a>
+                                        <a class="button btn_small btn_normalhollow no-width clear-all clear-all-btn right btn_disabled" href="javascript:void (0);"><i class="fa fa-trash-o"></i>清空</a>
+                                    </div>
+                                    <span class="font-gray">已邀请人员(<em class="peonum">0</em>)</span>
+                                </div>
+                                <div class="right-list">
+                                    <ul class="clearfix"></ul>
+                                </div>
+                                <div class="infs1">
+                                    <span class="font-gray">按部门筛选</span>
+                                </div>
+                            </div>
+                            <div class="peo-select">
+                                <ul style="zoom:1;" class="grid-ul">
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div id="select_zhuanti" class="weui-popup-container">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <div class="popup_header">
+                    <header class="header_normal nofixed">
+                        <div class="header_left"><a   class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">选择专题</div>
+                        <div class="header_right"><a class="p-color" href="javascript:void (0);" id="finish_zhuanti"> 完成</a></div>
+                    </header>
+                    <div class="special-sel-box">
+                        <div class="select-result" style="display: none">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="no-margin-b no-margin-t  special-sel-box popup_content">
+                        <!--<div class="select-result">
+                            <ul>
+                            </ul>
+                        </div>-->
+                        <div class="special-sel-base" style="display: block;">
+                            <div class="active clearfix">
+                                <div class="title">活动专题：</div>
+                                <ul class="clearfix">
+                                    <li><span>默认专题</span></li>
+                                    <li><span>迎新春、送温暖、爱家乡、献计策</span></li>
+                                    <li><span>两学一做</span></li>
+                                </ul>
+                            </div>
+                            <div class="center-base clearfix">
+                                <div class="title">中心基地专题：</div>
+                                <ul class="clearfix">
+                                    <li><span>仓山区党员创业就业培训中心</span></li>
+                                    <li><span>福州高新区党员创业就业培训中心</span></li>
+                                    <li><span>台江区党员就业船业培训中心</span></li>
+                                    <li><span>仓山区党员创业就业培训中心</span></li>
+                                    <li><span>福州高新区党员创业就业培训中心</span></li>
+                                    <li><span>台江区党员就业船业培训中心</span></li>
+                                    <li><span>仓山区党员创业就业培训中心</span></li>
+                                    <li><span>福州高新区党员创业就业培训中心</span></li>
+                                    <li><span>台江区党员就业船业培训中心</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="select_fenlei" class="weui-popup-container popup-bottom">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <div class="select_box">
+                        <div class="select_box_title">
+                            选择分类
+                            <a class="sure_btn close-popup">确定</a>
+                        </div>
+                        <div class="cells no-margin">
+                            <label for="fenglei1" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">党内活动</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="fenlei" id="fenglei1" value="党内活动">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+                            </label>
+                            <label for="fenglei2" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">关爱帮扶</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="fenlei" id="fenglei2" value="关爱帮扶">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+
+                            </label>
+                            <label for="fenglei3" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">及时帮扶</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="fenlei" id="fenglei3" value="及时帮扶">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+
+                            </label>
+                            <label for="fenglei4" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">及时帮扶1</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="fenlei" id="fenglei4" value="及时帮扶1">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="select_tag" class="weui-popup-container">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <header class="header_normal popup_header" >
+                        <div class="header_left"><a   class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">添加标签</div>
+                        <div class="header_right"><a class="p-color close-popup finish_tag" href="javascript:void (0);" > 完成</a></div>
+                    </header>
+                    <div class="no-margin-b popup_content bg_darke">
+                        <div class="tags" id="activeTags">
+                        </div>
+                        <div class="cells">
+                            <div class="cell">
+                                <div class="cell_primary color-daker">
+                                    <p>请选择常用标签</p>
+                                    <p>或手动输入标签，以空格或 " , " 分隔</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="active_plan" class="weui-popup-container">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <header class="header_normal popup_header">
+                        <div class="header_left"><a   class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">活动方案</div>
+                        <div class="header_right"><a class="p-color close-popup" href="javascript:void (0);" id="finish_plan"> 完成</a></div>
+                    </header>
+                    <div class="no-margin-b active_box popup_content" >
+                        <div class="active_plan">
+                            <textarea class="textarea"  placeholder="请描述您的方案"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="addre_active" class="weui-popup-container " >
+                <div class="weui-popup-modal ">
+                    <!--弹出内容-->
+                    <header class="header_normal popup_header" style="position: inherit">
+                        <div class="header_left"><a  class="close-popup"><i class="fa fa-angle-left left"></i></a></div>
+                        <div class="header_title">地址选择</div>
+                        <div class="header_right"><a class="p-color close-popup" href="javascript:void (0);" id="sure_address">确定</a></div>
+                    </header>
+                    <div class="no-margin-b  map_box">
+                        <div id="flow-data" class="popup_content">
+                            <div style="display: none" id="areaselct">
+                                <select class="city-province" name="province"></select>
+                                <select class="city-city " name="city"></select>
+                                <select class="city-district" name="district"></select>
+                            </div>
+                            <div class="map-pin-box">
+                                <div class="map-search">
+                                    <a class="pic-map"></a>
+                                    <i class="fa fa-search map-search-icon"></i>
+                                    <i class="fa fa-plus-circle map-delete-icon"></i>
+                                    <input class="map-s-input" type="text" id="keyword" name="keyword"  placeholder="搜索位置" onkeydown='keydown(event)' title=""/>
+                                </div>
+                                <div id="result1" name="result1" class="result-box"></div>
+                                <div class="map-piker-show">
+                                    <div id="mapContainer" ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- <div class="popup_bottom">
+                        <div class="addre_text">
+                            <div class="addre_text_hd">[位置]</div>
+                            <div class="addre_text_bd">福建省福州市鼓楼区软件大道20号</div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+            <div id="select_host" class="weui-popup-container popup-bottom">
+                <div class="weui-popup-modal">
+                    <!--弹出内容-->
+                    <div class="select_box">
+                        <div class="select_box_title">
+                            选择主办方
+                            <a class="sure_btn close-popup">确定</a>
+                        </div>
+                        <div class="cells no-margin">
+                            <label for="host1" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">福建省福州市鼓楼区东街街道军门社区党支部组织1</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="host" id="host1" value="福建省福州市鼓楼区东街街道军门社区党支部组织1">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+                            </label>
+                            <label for="host2" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">福建省福州市鼓楼区东街街道军门社区党支部组织2</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="host" id="host2" value="福建省福州市鼓楼区东道军门社区党支部组织2">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+                            </label>
+                            <label for="host3" class="cell_other no-margin cell close-popup">
+                                <div class="cell_other_title">福建省福州市鼓楼区东街街道军门社区党支部组织3</div>
+                                <div class="cell_other_button" >
+                                    <input type="radio" class="weui_check" name="host" id="host3" value="福建省福州市鼓楼区东街街道军门社区党">
+                                    <span class="weui_icon_checked check_blue"></span>
+                                </div>
+                            </label>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="javascript">
+            <script src="javascript/jquery-2.1.4.min.js"></script>
+            <script src="javascript/common.js"></script>
+            <script src="javascript/jquery-weui.js"></script>
+            <script src="javascript/paramR.js"></script>
+
+            <!--地图标记-->
+            <script src="http://webapi.amap.com/maps?v=1.3&amp;key=a2627897194b5d9aad9b47e7db2227d5"></script>
+            <script src="javascript/map.js" type="text/javascript" charset="utf8"></script>
+            <script src="javascript/jquery.select-city.js" type="text/javascript" charset="utf8"></script>
+            <script>
+                $(function(){
+                    //初始化地图弹出框
+                    function stopPropagation(e) {
+                        if (e.stopPropagation)
+                            e.stopPropagation();
+                        else
+                            e.cancelBubble = true;
+                    }
+                    $('.map-pin-box').bind('click',function(e){
+                        stopPropagation(e);
+                    });
+                    e.selectareas.init($('#flow-data'));
+                });
+            </script>
+
+            <!--地区选择和定位-->
+            <script src="javascript/jquery.indexedlist.js"></script>
+            <script type="text/javascript">
+                $(function(){
+                    function positionCity(){
+                        var mapObj = new AMap.Map('iCenter');
+                        //加载城市查询插件
+                        AMap.service(["AMap.CitySearch"], function() {
+                            //实例化城市查询类
+                            var citysearch = new AMap.CitySearch();
+                            //自动获取用户IP，返回当前城市
+                            citysearch.getLocalCity(function(status, result){
+                                //当结果状态为"complete"且状态信息为"OK"时，解析服务返回结果
+                                if(status === 'complete' && result.info === 'OK'){
+                                    if(result && result.city && result.bounds) {
+                                        var cityinfo = result.city;
+                                        var citybounds = result.bounds;
+                                        document.getElementById('positionCity').innerHTML = cityinfo.replace('市','');
+                                        //将地图移动到当前城市
+                                        mapObj.setBounds(citybounds);
+                                    }
+                                }
+                                //当结果状态为"complete"且状态信息为其他时，解析服务提示信息
+                                else{
+                                    document.getElementById('positionCity').innerHTML = "定位失败";
+                                }
+                            });
+                        });
+                    }
+                    positionCity();
+                    $('#cms_indexed_list').indexedlist();
+
+                    $('#cms_indexed_list .cms-indexed-list-inner .table-view-cell').on('click',function(){
+                        var oarea=$('#area').val();
+                        var narea=$(this).html();
+                        if(oarea!=narea){
+                            $('#area').val($(this).html());
+                            $('#address').val('');
+                            var cityName=$('#area').val();
+                            if(cityName){
+                                /*设置地图中心*/
+                                $('#lnglatXY').val('');
+                                $('#keyword').val('')
+                                mapObj.setCity(cityName);
+                                if(markerP){
+                                   // markerP.setMap();
+                                    mapObj.remove(markerP);
+                                    infoWindow.close();
+                                    markerP = "";
+                                    infoWindow = "";
+                                }
+                            }
+                        }
+                        var a=markerP;
+                        $.closePopup();
+                    });
+                });
+            </script>
+            <!--人员选择-->
+            <script src="javascript/peopleselect.js"></script>
+            <script src="javascript/people.js"></script>
+            <!--组织选择-->
+            <script src="javascript/orgSelect.js"></script>
+            <script src="javascript/org.js"></script>
+            <!--人员组织选择初始化-->
+            <script type="text/javascript">
+                //人员组织选择初始化
+                $('#peopleselect').peoSelect({
+                    num : ''
+                });
+                function peonumTip(num){
+                    $.toast('最多选择'+num+'个人员', "text");
+                }
+                $('#orgselect').orgSelect({
+                    name: '',/*存放默认数据的input名字*/
+                    id:'#flow-data', //存放用户信息的表单
+                    num:1
+                });
+                function orgnumTip(num){
+                    $.toast('最多选择'+num+'个组织', "text");
+                }
+
+            </script>
+            <!--标签-->
+            <script src="javascript/select2.js"></script>
+            <script src="javascript/jquery.tag.js"></script>
+            <!--时间-->
+            <script src="javascript/mobiscroll.js" type="text/javascript"></script>
+            <script src="javascript/mobiscrollDateTime.js" type="text/javascript"></script>
+            <script src="javascript/mobiscroll.i18n.zh.js" type="text/javascript"></script>
+            <!--页面js-->
+            <script src="javascript/createActive.js"></script>
+
+        </div>
+    </div>
+
+</body>
+</html>
